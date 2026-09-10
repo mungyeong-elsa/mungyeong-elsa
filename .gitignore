@@ -25,3 +25,6 @@ dist-ssr
 
 # Vercel
 .vercel
+
+# TS build info
+*.tsbuildinfo
