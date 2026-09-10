@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-base text-text font-sans antialiased;
+    font-size: 17px; /* PC 본문 최소 17px (시니어 가독성) */
+    line-height: 1.7;
+  }
+
+  @media (max-width: 640px) {
+    body {
+      font-size: 16px; /* 모바일 본문 최소 16px */
+    }
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-sans;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    word-break: keep-all;
+  }
+
+  ::selection {
+    background: #17251f;
+    color: #f7f5f0;
+  }
+
+  /* 포커스 접근성 */
+  a:focus-visible,
+  button:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid #b87952;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-content px-6 sm:px-8 lg:px-12;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-label text-accent;
+    font-family: 'Manrope', 'Inter', sans-serif;
+  }
+
+  .display {
+    font-family: 'Manrope', 'Inter', 'Pretendard', sans-serif;
+  }
+
+  /* 부드러운 스크롤 등장 애니메이션 */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold transition-all duration-300 ease-soft;
+    min-height: 52px; /* 충분한 터치 영역 */
+  }
+
+  .btn-primary {
+    @apply btn bg-ink text-base hover:bg-forest;
+  }
+
+  .btn-outline {
+    @apply btn border border-ink/25 bg-transparent text-ink hover:border-ink hover:bg-ink hover:text-base;
+  }
+}
+
+/* 접근성: 움직임 최소화 설정 존중 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
