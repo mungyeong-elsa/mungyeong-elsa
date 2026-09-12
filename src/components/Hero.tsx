@@ -18,8 +18,10 @@ export default function Hero() {
           </p>
 
           <h1 className="reveal mt-6 text-fluid-hero font-extrabold leading-[1.02] text-ink" data-delay="60">
-            {SITE_CONFIG.brandName}
-            <span className="mt-2 block text-muted">{SITE_CONFIG.nameKo}</span>
+            <span className="block">{SITE_CONFIG.brandName}</span>
+            <span className="mt-1 block text-[1.333em] leading-[1.0] text-muted">
+              {SITE_CONFIG.nameKo}
+            </span>
           </h1>
 
           <p className="reveal mt-8 max-w-xl text-fluid-h3 font-bold text-forest" data-delay="120">
