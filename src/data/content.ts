@@ -297,9 +297,9 @@ export const PORTFOLIO_DATA: Portfolio[] = [
     title: '1인 미디어 크리에이터 교육',
     category: ['CREATOR', 'SMARTPHONE'],
     categoryLabel: '콘텐츠 제작 교육',
-    desc: '스마트폰을 활용한 사진·영상·SNS 콘텐츠 제작 교육.',
+    desc: '스마트폰을 활용한 사진·영상·SNS 콘텐츠 제작 교육. 문경시 마을홍보 영상제작 강의 현장입니다.',
     size: 'wide',
-    image: '',
+    image: '/images/creator.jpg',
   },
   {
     no: '07',
