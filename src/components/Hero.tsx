@@ -103,8 +103,15 @@ function HeroVisual() {
 
       {/* 겹쳐진 작은 카드 (책) */}
       <div className="absolute -bottom-6 -left-6 w-36 rotate-[-6deg] rounded-2xl border border-ink/10 bg-paper p-4 shadow-xl shadow-ink/10 sm:w-40">
-        <div className="mb-3 h-20 rounded-lg bg-gradient-to-br from-accent to-beige" />
-        <p className="text-xs font-bold text-ink">AI로 나만의 책</p>
+        <div className="mb-3 aspect-[3/4] overflow-hidden rounded-lg bg-gradient-to-br from-accent to-beige">
+          <img
+            src="/images/book-grandma.jpg"
+            alt="할머니의 비밀별 책 표지"
+            loading="eager"
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <p className="text-xs font-bold leading-snug text-ink">AI와 캔바로 작가되기</p>
         <p className="mt-0.5 text-[11px] text-muted">경험을 기록으로</p>
       </div>
 
