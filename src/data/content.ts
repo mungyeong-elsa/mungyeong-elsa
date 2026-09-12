@@ -56,7 +56,7 @@ export const SOCIAL_CONFIG = {
 export const IMAGE_CONFIG = {
   profileImage: '/images/profile.jpg', // (ABOUT 세로 사진) 일러스트 초상
   heroImage: '/images/hero.jpg', // (첫 화면 메인 비주얼) 자연 속 실물 프로필
-  farmImage: '', // 예: '/images/farm.jpg'  (무아팜 사진 — 넣으면 그래픽 대신 표시)
+  farmImage: '/images/farm.jpg', // (무아팜 사진) 문경 포도밭
   indigoImage: '', // 예: '/images/indigo.jpg'  (인디go 사진)
 }
 
