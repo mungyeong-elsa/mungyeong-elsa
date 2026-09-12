@@ -306,9 +306,9 @@ export const PORTFOLIO_DATA: Portfolio[] = [
     title: '퍼스널브랜딩 교육',
     category: ['BRANDING', 'AI'],
     categoryLabel: '브랜딩 교육',
-    desc: 'AI와 SNS를 활용한 개인 브랜드 구축 교육.',
+    desc: 'AI와 SNS를 활용한 개인 브랜드 구축 교육. 농장 브랜딩과 농산물 마케팅(ChatGPT·캔바·캡컷) 강의 현장입니다.',
     size: 'normal',
-    image: '',
+    image: '/images/branding.jpg',
   },
 ]
 
