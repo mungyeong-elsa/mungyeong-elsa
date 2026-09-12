@@ -109,7 +109,7 @@ function HeroVisual() {
       {/* 겹쳐진 작은 배지 (자연) */}
       <div className="absolute -right-4 top-8 flex h-20 w-20 rotate-6 flex-col items-center justify-center rounded-2xl border border-ink/10 bg-forest text-center text-base shadow-xl shadow-forest/20 sm:h-24 sm:w-24">
         <span className="text-2xl">🍇</span>
-        <span className="mt-1 text-[10px] font-semibold uppercase tracking-wider">MUA FARM</span>
+        <span className="mt-1 text-[10px] font-semibold uppercase tracking-wider">MOOA FARM</span>
       </div>
     </div>
   )

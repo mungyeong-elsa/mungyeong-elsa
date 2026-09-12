@@ -35,16 +35,16 @@ export const SITE_CONFIG = {
 
 export const CONTACT_CONFIG = {
   // ▼▼▼ 여기를 실제 정보로 바꾸세요 ▼▼▼
-  email: 'hello@example.com',
-  phone: '010-0000-0000',
+  email: 'm31aswater@gmail.com',
+  phone: '010-6769-5539',
   // ▲▲▲ 여기를 실제 정보로 바꾸세요 ▲▲▲
 }
 
 export const SOCIAL_CONFIG = {
   // 사용하지 않는 채널은 값을 '' (빈 값)으로 두면 자동으로 숨겨집니다.
-  instagram: 'https://instagram.com/',
-  youtube: 'https://youtube.com/',
-  blog: 'https://blog.naver.com/',
+  instagram: 'https://www.instagram.com/mgdtelsa',
+  youtube: 'https://www.youtube.com/@mooafarm',
+  blog: 'https://blog.naver.com/mooafarm',
 }
 
 /* -------------------------------------------------------------

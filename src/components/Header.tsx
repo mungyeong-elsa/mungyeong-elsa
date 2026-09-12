@@ -6,7 +6,7 @@ const NAV = [
   { label: 'LECTURE', href: '#lecture' },
   { label: 'PORTFOLIO', href: '#portfolio' },
   { label: 'BOOKS', href: '#books' },
-  { label: 'MUA FARM', href: '#farm' },
+  { label: 'MOOA FARM', href: '#farm' },
   { label: 'CONTACT', href: '#contact' },
 ]
 

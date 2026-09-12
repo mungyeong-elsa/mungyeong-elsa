@@ -7,7 +7,7 @@ export default function MuaFarm() {
       <div className="wrap grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-20">
         {/* 텍스트 */}
         <div>
-          <SectionLabel en="MUA FARM · 무아팜" />
+          <SectionLabel en="MOOA FARM · 무아팜" />
           <h2 className="reveal mt-5 text-fluid-h2 font-extrabold leading-tight text-ink" data-delay="60">
             디지털을 가르치지만
             <br />
