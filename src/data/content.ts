@@ -54,9 +54,9 @@ export const SOCIAL_CONFIG = {
  *  3) 값을 '' (빈 값)으로 두면 감성적인 그래픽 배경이 자동으로 표시됩니다.
  * ----------------------------------------------------------- */
 export const IMAGE_CONFIG = {
-  profileImage: '', // 예: '/images/profile.jpg'  (ABOUT 세로 사진)
-  heroImage: '', // 예: '/images/hero.jpg'      (첫 화면 메인 비주얼)
-  farmImage: '', // 예: '/images/farm.jpg'      (무아팜 사진)
+  profileImage: '/images/profile.jpg', // (ABOUT 세로 사진) 일러스트 초상
+  heroImage: '/images/hero.jpg', // (첫 화면 메인 비주얼) 자연 속 실물 프로필
+  farmImage: '', // 예: '/images/farm.jpg'  (무아팜 사진 — 넣으면 그래픽 대신 표시)
   indigoImage: '', // 예: '/images/indigo.jpg'  (인디go 사진)
 }
 
@@ -254,7 +254,7 @@ export const PORTFOLIO_DATA: Portfolio[] = [
     categoryLabel: '스마트폰 활용 교재',
     desc: '스마트폰 활용 교육 교재. 2024년부터 출간하고 있으며, 최신 스마트폰 환경에 맞춰 개정판을 계속 제작하고 있습니다.',
     size: 'large',
-    image: '',
+    image: '/images/book-smartphone.jpg',
   },
   {
     no: '02',
@@ -263,7 +263,7 @@ export const PORTFOLIO_DATA: Portfolio[] = [
     categoryLabel: '시니어 AI 용어 해설',
     desc: '시니어를 위한 AI 디지털 용어 해설. 어려운 말을 쉽게 풀어 처음 배우는 사람도 이해할 수 있게 했습니다.',
     size: 'normal',
-    image: '',
+    image: '/images/book-ai.jpg',
   },
   {
     no: '03',
@@ -272,7 +272,7 @@ export const PORTFOLIO_DATA: Portfolio[] = [
     categoryLabel: 'AI 그림동화책',
     desc: 'AI를 활용해 제작한 그림동화책.',
     size: 'normal',
-    image: '',
+    image: '/images/book-funny.jpg',
   },
   {
     no: '04',
@@ -281,16 +281,16 @@ export const PORTFOLIO_DATA: Portfolio[] = [
     categoryLabel: 'AI 그림동화책',
     desc: 'AI를 활용해 제작한 그림동화책.',
     size: 'wide',
-    image: '',
+    image: '/images/book-grandma.jpg',
   },
   {
     no: '05',
     title: 'AI 디지털 교육',
     category: ['AI', 'FARM'],
     categoryLabel: '교육 프로그램',
-    desc: '시니어와 농업인을 위한 AI·디지털 교육 프로그램.',
+    desc: '시니어와 농업인을 위한 AI·디지털 교육 프로그램. 문경 지역 기관에서 진행한 실제 강의 현장입니다.',
     size: 'normal',
-    image: '',
+    image: '/images/lecture.jpg',
   },
   {
     no: '06',
@@ -339,27 +339,27 @@ export const BOOK_DATA: Book[] = [
     label: 'SMARTPHONE',
     desc: '스마트폰이 어렵게 느껴지는 사람도 하나씩 따라 하며 익힐 수 있는 활용 교재. 최신 환경에 맞춰 개정판을 이어가고 있습니다.',
     spineColor: '#667A63',
-    cover: '',
+    cover: '/images/book-smartphone.jpg',
   },
   {
     title: 'AI는 처음이지',
     label: 'AI · SENIOR',
     desc: '시니어를 위한 AI 디지털 용어 해설서. 낯선 AI 용어를 일상의 언어로 쉽게 풀어냅니다.',
     spineColor: '#B87952',
-    cover: '',
+    cover: '/images/book-ai.jpg',
   },
   {
     title: '웃기지 않아도 괜찮아',
     label: 'AI PICTURE BOOK',
     desc: 'AI를 활용해 만든 그림동화책. 누구나 자신의 이야기를 그림책으로 만들 수 있다는 것을 보여줍니다.',
     spineColor: '#17251F',
-    cover: '',
+    cover: '/images/book-funny.jpg',
   },
   {
     title: '할머니의 비밀별',
     label: 'AI PICTURE BOOK',
     desc: 'AI를 활용해 만든 그림동화책. 따뜻한 이야기와 그림이 함께 담겼습니다.',
     spineColor: '#737A74',
-    cover: '',
+    cover: '/images/book-grandma.jpg',
   },
 ]
