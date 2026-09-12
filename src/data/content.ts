@@ -18,7 +18,7 @@
 export const SITE_CONFIG = {
   brandName: '문경엘사',
   nameKo: '오현수',
-  nameEn: 'OH HYUNSOO',
+  nameEn: 'OH HYUNSUE',
   role: 'AI 디지털 강사',
   roleEn: 'AI DIGITAL CREATOR',
   location: '경상북도 문경',
