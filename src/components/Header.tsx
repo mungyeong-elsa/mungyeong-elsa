@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react'
 import { SITE_CONFIG } from '../data/content'
 
 const NAV = [
-  { label: 'ABOUT', href: '#about' },
-  { label: 'LECTURE', href: '#lecture' },
-  { label: 'PORTFOLIO', href: '#portfolio' },
-  { label: 'BOOKS', href: '#books' },
-  { label: 'MOOA FARM', href: '#farm' },
-  { label: 'CONTACT', href: '#contact' },
+  { label: 'ABOUT', ko: '소개', href: '#about' },
+  { label: 'LECTURE', ko: '강의', href: '#lecture' },
+  { label: 'PORTFOLIO', ko: '포트폴리오', href: '#portfolio' },
+  { label: 'BOOKS', ko: '책', href: '#books' },
+  { label: 'MOOA FARM', ko: '무아팜', href: '#farm' },
+  { label: 'CONTACT', ko: '문의', href: '#contact' },
 ]
 
 export default function Header() {
@@ -99,7 +99,7 @@ export default function Header() {
               className="border-b border-ink/10 py-4 text-2xl font-bold text-ink"
               style={{ transitionDelay: `${i * 40}ms` }}
             >
-              {item.label}
+              {item.ko}
             </a>
           ))}
           <a
