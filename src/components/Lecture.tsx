@@ -1,6 +1,28 @@
 import { useEffect, useState } from 'react'
-import { LECTURE_DATA, type Lecture as LectureType } from '../data/content'
+import {
+  LECTURE_DATA,
+  APPLY_CONFIG,
+  CONTACT_CONFIG,
+  type Lecture as LectureType,
+  type LectureStatus,
+} from '../data/content'
+import { applyHref, applyOpensNewTab } from '../lib/apply'
 import SectionLabel from './SectionLabel'
+
+const STATUS_STYLE: Record<LectureStatus, string> = {
+  모집중: 'bg-forest/12 text-forest',
+  모집예정: 'bg-accent/12 text-accent',
+  상시모집: 'bg-ink/8 text-forest',
+  마감: 'bg-ink/8 text-muted',
+}
+
+function StatusBadge({ status }: { status: LectureStatus }) {
+  return (
+    <span className={`rounded-full px-3 py-1 text-xs font-bold ${STATUS_STYLE[status]}`}>
+      {status}
+    </span>
+  )
+}
 
 export default function Lecture() {
   const [active, setActive] = useState<LectureType | null>(null)
@@ -31,7 +53,7 @@ export default function Lecture() {
             <span className="text-accent">내일의 실천</span>으로 이어지게 도와드립니다.
           </h2>
           <p className="reveal mt-5 text-lg text-muted" data-delay="120">
-            카드를 누르면 대상과 교육 내용, 추천 대상을 자세히 볼 수 있어요.
+            카드를 누르면 교육 내용과 수강료를 확인하고 바로 신청할 수 있어요.
           </p>
         </div>
 
@@ -44,11 +66,19 @@ export default function Lecture() {
               className="reveal group flex h-full flex-col rounded-3xl border border-ink/12 bg-paper p-7 text-left transition-all duration-500 ease-soft hover:-translate-y-1.5 hover:border-forest hover:shadow-xl hover:shadow-ink/5"
               data-delay={`${(i % 3) * 80}`}
             >
-              <span className="display text-sm font-bold text-accent">{lec.no}</span>
+              <div className="flex items-center justify-between">
+                <span className="display text-sm font-bold text-accent">{lec.no}</span>
+                <StatusBadge status={lec.status ?? '상시모집'} />
+              </div>
               <h3 className="mt-5 text-xl font-extrabold text-ink">{lec.title}</h3>
               <p className="mt-3 flex-1 text-base leading-relaxed text-muted">{lec.summary}</p>
-              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-forest transition-colors group-hover:text-accent">
-                조금 더 알아보기
+              {lec.price && (
+                <p className="mt-5 text-base font-bold text-ink">
+                  수강료 <span className="text-accent">{lec.price}</span>
+                </p>
+              )}
+              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-forest transition-colors group-hover:text-accent">
+                자세히 보고 신청하기
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
                   <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -87,7 +117,10 @@ function LectureModal({ lecture, onClose }: { lecture: LectureType; onClose: () 
           </svg>
         </button>
 
-        <span className="display text-sm font-bold text-accent">{lecture.no}</span>
+        <div className="flex items-center gap-3">
+          <span className="display text-sm font-bold text-accent">{lecture.no}</span>
+          <StatusBadge status={lecture.status ?? '상시모집'} />
+        </div>
         <h3 className="mt-2 text-3xl font-extrabold text-ink">{lecture.title}</h3>
         <p className="mt-3 text-lg text-forest">{lecture.summary}</p>
 
@@ -106,11 +139,40 @@ function LectureModal({ lecture, onClose }: { lecture: LectureType; onClose: () 
           </div>
           <Field label="추천 대상">{lecture.recommend}</Field>
           <Field label="교육 방식">{lecture.method}</Field>
+          {lecture.schedule && <Field label="일정">{lecture.schedule}</Field>}
+          {lecture.price && (
+            <Field label="수강료">
+              <span className="text-xl font-extrabold text-ink">{lecture.price}</span>
+            </Field>
+          )}
         </dl>
 
-        <a href="#contact" onClick={onClose} className="btn-primary mt-8 w-full sm:w-auto">
-          이 강의 문의하기
-        </a>
+        {APPLY_CONFIG.guide && (
+          <p className="mt-8 rounded-2xl bg-paper p-5 text-base leading-relaxed text-text/80">
+            {APPLY_CONFIG.guide}
+          </p>
+        )}
+
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+          <a
+            href={applyHref(lecture.title)}
+            target={applyOpensNewTab() ? '_blank' : undefined}
+            rel={applyOpensNewTab() ? 'noopener noreferrer' : undefined}
+            onClick={onClose}
+            className="btn-primary w-full sm:flex-1"
+          >
+            이 강의 신청하기
+          </a>
+          <a
+            href={`mailto:${CONTACT_CONFIG.email}?subject=${encodeURIComponent(
+              `[강의 문의] ${lecture.title} — 문경엘사`,
+            )}`}
+            onClick={onClose}
+            className="btn-outline w-full sm:w-auto"
+          >
+            문의하기
+          </a>
+        </div>
       </div>
     </div>
   )

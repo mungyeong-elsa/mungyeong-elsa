@@ -4,6 +4,7 @@ import { SITE_CONFIG } from '../data/content'
 const NAV = [
   { label: 'ABOUT', ko: '소개', href: '#about' },
   { label: 'LECTURE', ko: '강의', href: '#lecture' },
+  { label: '1:1', ko: '1:1 개인지도', href: '#oneonone' },
   { label: 'PORTFOLIO', ko: '포트폴리오', href: '#portfolio' },
   { label: 'BOOKS', ko: '펴낸책', href: '#books' },
   { label: 'MOOA FARM', ko: '무아팜', href: '#farm' },
@@ -48,7 +49,7 @@ export default function Header() {
         </a>
 
         {/* 데스크톱 메뉴 */}
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="주요 메뉴">
+        <nav className="hidden items-center gap-6 lg:flex" aria-label="주요 메뉴">
           {NAV.map((item) => (
             <a
               key={item.href}
@@ -58,8 +59,8 @@ export default function Header() {
               {item.label}
             </a>
           ))}
-          <a href="#contact" className="btn-primary !min-h-0 !px-5 !py-2.5 !text-sm">
-            함께 만들어볼까요?
+          <a href="#lecture" className="btn-primary !min-h-0 !px-5 !py-2.5 !text-sm">
+            강의 신청하기
           </a>
         </nav>
 
@@ -103,11 +104,11 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="#lecture"
             onClick={() => setOpen(false)}
             className="btn-primary mt-8 w-full"
           >
-            함께 만들어볼까요?
+            강의 신청하기
           </a>
         </nav>
       </div>

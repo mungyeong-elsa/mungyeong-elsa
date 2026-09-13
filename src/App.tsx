@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import WhatIDo from './components/WhatIDo'
 import Lecture from './components/Lecture'
+import OneOnOne from './components/OneOnOne'
 import Portfolio from './components/Portfolio'
 import Books from './components/Books'
 import Indigo from './components/Indigo'
@@ -11,6 +12,7 @@ import MuaFarm from './components/MuaFarm'
 import Philosophy from './components/Philosophy'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import MobileCTA from './components/MobileCTA'
 
 export default function App() {
   useReveal()
@@ -29,6 +31,7 @@ export default function App() {
         <About />
         <WhatIDo />
         <Lecture />
+        <OneOnOne />
         <Portfolio />
         <Books />
         <Indigo />
@@ -37,6 +40,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <MobileCTA />
     </div>
   )
 }

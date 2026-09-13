@@ -40,6 +40,30 @@ export const CONTACT_CONFIG = {
   // ▲▲▲ 여기를 실제 정보로 바꾸세요 ▲▲▲
 }
 
+/* -------------------------------------------------------------
+ *  APPLY_CONFIG — 강의 신청 / 결제 안내
+ * -------------------------------------------------------------
+ *  ※ 값을 '' (빈 값)으로 두면 해당 버튼/안내가 자동으로 숨겨지고,
+ *    신청 버튼은 자연스럽게 '문의하기'로 연결됩니다.
+ *
+ *  - formUrl     : 신청서 링크(구글폼/네이버폼 등). 만들면 여기에 붙여넣기.
+ *                  구글폼이면 강의명이 자동으로 채워지도록 아래 formEntryId도 설정.
+ *  - formEntryId : 구글폼에서 '강의명'을 받는 칸의 entry.xxxx 번호 (선택).
+ *  - kakaoUrl    : 카카오톡 채널 / 오픈채팅 링크 (선택).
+ *  - bankAccount : 계좌이체 안내 문구 (예: '농협 123-4567-8901 오현수') (선택).
+ *  - tossLink    : 토스 결제/송금 링크 (선택).
+ *  - guide       : 신청 후 안내 문구.
+ * ----------------------------------------------------------- */
+export const APPLY_CONFIG = {
+  formUrl: '', // 예: 'https://forms.gle/xxxxxxxx'
+  formEntryId: '', // 예: 'entry.1234567890'
+  kakaoUrl: '', // 예: 'https://open.kakao.com/o/xxxxxxx'
+  bankAccount: '', // 예: '농협 123-4567-8901 오현수'
+  tossLink: '', // 예: 'https://toss.me/xxxx'
+  guide:
+    '신청서를 남겨주시면 문경엘사가 직접 연락드려 일정과 결제 방법(계좌이체 또는 간편 결제 링크)을 안내해드립니다.',
+}
+
 export const SOCIAL_CONFIG = {
   // 사용하지 않는 채널은 값을 '' (빈 값)으로 두면 자동으로 숨겨집니다.
   instagram: 'https://www.instagram.com/mgdtelsa',
@@ -101,6 +125,8 @@ export const WHATIDO_DATA = [
  *  LECTURE — 강의 목록
  *  새 강의를 추가하려면 { } 블록을 복사해서 아래에 붙여넣으세요.
  * ----------------------------------------------------------- */
+export type LectureStatus = '모집중' | '모집예정' | '상시모집' | '마감'
+
 export interface Lecture {
   no: string
   title: string
@@ -109,6 +135,9 @@ export interface Lecture {
   content: string[] // 교육 내용
   recommend: string // 추천 대상
   method: string // 교육 방식
+  status?: LectureStatus // 모집 상태 (선택 · 기본 '상시모집')
+  price?: string // 가격 (선택 · 예: '10만원', '문의')
+  schedule?: string // 일정 (선택 · 예: '매주 화 10:00')
 }
 
 export const LECTURE_DATA: Lecture[] = [
@@ -124,6 +153,8 @@ export const LECTURE_DATA: Lecture[] = [
     ],
     recommend: 'AI가 궁금하지만 어디서부터 시작할지 막막한 분',
     method: '실습 중심 · 오프라인/온라인 모두 가능',
+    status: '상시모집',
+    price: '문의',
   },
   {
     no: '02',
@@ -137,6 +168,8 @@ export const LECTURE_DATA: Lecture[] = [
     ],
     recommend: '스마트폰을 두려워하지 않고 생활에 활용하고 싶은 분',
     method: '천천히 따라 하는 실습형 수업',
+    status: '상시모집',
+    price: '문의',
   },
   {
     no: '03',
@@ -150,6 +183,8 @@ export const LECTURE_DATA: Lecture[] = [
     ],
     recommend: '기술 때문에 소외되지 않고 스스로 해내고 싶은 분',
     method: '눈높이 맞춤 · 반복 · 편안한 분위기',
+    status: '상시모집',
+    price: '문의',
   },
   {
     no: '04',
@@ -163,6 +198,8 @@ export const LECTURE_DATA: Lecture[] = [
     ],
     recommend: '농사에 디지털을 더해 판로를 넓히고 싶은 분',
     method: '농촌 현장 맞춤 실전 교육',
+    status: '상시모집',
+    price: '문의',
   },
   {
     no: '05',
@@ -176,6 +213,8 @@ export const LECTURE_DATA: Lecture[] = [
     ],
     recommend: '거창한 장비 없이 콘텐츠를 시작하고 싶은 분',
     method: '기획 → 촬영 → 편집 → 발행 전 과정 실습',
+    status: '상시모집',
+    price: '문의',
   },
   {
     no: '06',
@@ -189,6 +228,8 @@ export const LECTURE_DATA: Lecture[] = [
     ],
     recommend: '자신의 경험을 브랜드로 만들고 싶은 분',
     method: '나만의 브랜드 설계 워크숍형',
+    status: '상시모집',
+    price: '문의',
   },
   {
     no: '07',
@@ -202,6 +243,8 @@ export const LECTURE_DATA: Lecture[] = [
     ],
     recommend: '유튜브를 막연히 어렵게만 느끼던 분',
     method: '실제 채널 개설·운영까지 함께',
+    status: '상시모집',
+    price: '문의',
   },
   {
     no: '08',
@@ -215,6 +258,8 @@ export const LECTURE_DATA: Lecture[] = [
     ],
     recommend: '글쓰기가 부담스럽지만 내 이야기를 남기고 싶은 분',
     method: '기획부터 출판까지 단계별 진행',
+    status: '상시모집',
+    price: '문의',
   },
   {
     no: '09',
@@ -228,6 +273,8 @@ export const LECTURE_DATA: Lecture[] = [
     ],
     recommend: '같은 시간에 더 잘, 더 빠르게 일하고 싶은 분',
     method: '업무 사례 중심 실습',
+    status: '상시모집',
+    price: '문의',
   },
 ]
 
@@ -376,4 +423,79 @@ export const BOOK_DATA: Book[] = [
     spineColor: '#667A63',
     cover: '/images/book-24.jpg',
   },
+]
+
+/* -------------------------------------------------------------
+ *  ONE-ON-ONE — 1:1 개인지도
+ *  배우고 싶은 것만 골라 내 속도에 맞춰 배우는 맞춤형 수업.
+ * ----------------------------------------------------------- */
+export const ONEONONE_CONFIG = {
+  headline: '나에게 딱 맞는\n1:1 개인지도',
+  lead: '스마트폰 사용부터 AI 활용, SNS, 유튜브, 캡컷, 퍼스널브랜딩, 나만의 책 만들기까지 — 배우고 싶은 것만 골라 내 속도에 맞춰 1:1로 배울 수 있습니다.',
+  quote: '모르는 것을 부끄러워하지 마세요.\n모르는 만큼 천천히 알려드릴게요.',
+  // 온라인/오프라인 안내
+  online: '온라인 · Zoom, Google Meet 등 화상으로 진행',
+  offline: '오프라인 · 문경 지역에서 직접 만나 진행',
+}
+
+// 함께 배우는 강의 vs 1:1 비교 (방문자가 자신에게 맞는 쪽을 고르도록)
+export const ONEONONE_COMPARE = [
+  {
+    tag: '함께 배우는 강의',
+    desc: '정해진 커리큘럼으로 여러 사람과 함께 배우고 싶다면',
+    href: '#lecture',
+    cta: '강의 둘러보기',
+    highlight: false,
+  },
+  {
+    tag: '나에게 맞춘 1:1',
+    desc: '내가 궁금한 것만, 내 속도에 맞춰 배우고 싶다면',
+    href: '#oneonone-apply',
+    cta: '1:1 개인지도 신청',
+    highlight: true,
+  },
+]
+
+export interface OneOnOneField {
+  title: string
+  desc: string
+}
+
+// 1:1로 배울 수 있는 분야
+export const ONEONONE_FIELDS: OneOnOneField[] = [
+  { title: '스마트폰 1:1', desc: '내 스마트폰을 직접 보면서 필요한 기능을 하나씩 배우는 맞춤 수업' },
+  { title: 'ChatGPT 1:1', desc: '가입부터 질문하기, 글쓰기, 콘텐츠 제작까지' },
+  { title: 'AI 활용 1:1', desc: '내 업무에 AI를 실제로 어떻게 활용할지 함께 실습' },
+  { title: 'SNS 1:1', desc: '인스타그램·블로그·페이스북 등 SNS 활용법' },
+  { title: '유튜브 1:1', desc: '채널 개설부터 영상 제작과 업로드까지' },
+  { title: '캡컷 1:1', desc: '스마트폰으로 영상 편집하기' },
+  { title: '퍼스널브랜딩 1:1', desc: '나의 강점과 경험을 콘텐츠와 브랜드로 만드는 과정' },
+  { title: '나만의 책 만들기 1:1', desc: 'AI로 내 경험과 이야기를 한 권의 책으로' },
+]
+
+// 이런 분께 추천합니다
+export const ONEONONE_TARGETS: string[] = [
+  '단체 수업에서는 질문하기 어려웠던 분',
+  '스마트폰을 처음부터 차근차근 배우고 싶은 분',
+  'ChatGPT·AI를 내 일에 제대로 활용하고 싶은 분',
+  '유튜브·SNS를 시작하고 싶은 분',
+  '농산물이나 내 사업을 SNS로 홍보하고 싶은 분',
+  '강의에서 배웠지만 혼자 하려니 막히는 분',
+]
+
+// 진행 흐름 (신청 → 결제 → 수업)
+export const ONEONONE_STEPS: string[] = [
+  '개인지도 신청',
+  '배우고 싶은 내용 작성',
+  '문경엘사가 확인',
+  '수업 일정 확정',
+  '결제',
+  '수업 시작',
+]
+
+// 대표 후기 (실제 후기가 생기면 여기서 수정·추가)
+export const ONEONONE_REVIEWS: string[] = [
+  '단체 수업에서는 질문하기 어려웠는데, 제 스마트폰을 직접 보면서 알려주시니 훨씬 이해하기 쉬웠어요.',
+  'ChatGPT를 처음에는 무서워했는데, 이제는 매일 사용하고 있어요.',
+  '제가 하고 싶은 일을 이야기했더니 필요한 AI 활용법을 딱 맞춰 알려주셔서 좋았습니다.',
 ]
