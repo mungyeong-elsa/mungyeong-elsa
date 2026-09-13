@@ -362,4 +362,18 @@ export const BOOK_DATA: Book[] = [
     spineColor: '#737A74',
     cover: '/images/book-grandma.jpg',
   },
+  {
+    title: '엄마의 꽃밭',
+    label: 'COLORING BOOK',
+    desc: 'AI로 그린 그림에 색을 입히는 컬러링북. 꽃밭 속 따뜻한 풍경을 직접 칠하며 쉬어갈 수 있습니다.',
+    spineColor: '#B87952',
+    cover: '/images/book-mom.jpg',
+  },
+  {
+    title: '24절기 색칠하기',
+    label: 'COLORING BOOK',
+    desc: '24절기의 자연 풍경과 우리 조상의 지혜를 담은 컬러링북. 계절의 흐름을 색으로 만나 봅니다.',
+    spineColor: '#667A63',
+    cover: '/images/book-24.jpg',
+  },
 ]
