@@ -26,9 +26,9 @@ export default function Lecture() {
         <div className="max-w-3xl">
           <SectionLabel en="LECTURE · 함께 배우는 것들" />
           <h2 className="reveal mt-5 text-fluid-h2 font-extrabold leading-tight text-ink" data-delay="60">
-            배우는 순간보다
+            오늘의 배움이
             <br />
-            <span className="text-accent">써먹는 순간</span>이 중요합니다.
+            <span className="text-accent">내일의 실천</span>으로 이어지게 도와드립니다.
           </h2>
           <p className="reveal mt-5 text-lg text-muted" data-delay="120">
             카드를 누르면 대상과 교육 내용, 추천 대상을 자세히 볼 수 있어요.
