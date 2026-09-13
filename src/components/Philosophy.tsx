@@ -19,7 +19,7 @@ export default function Philosophy() {
           </blockquote>
           <p className="reveal mt-10 text-lg text-muted" data-delay="160">
             배움은 나를 바꾸는 데서 끝나지 않고,
-            <br className="sm:hidden" /> 다른 사람의 삶을 바꾸는 데까지 갑니다.
+            <br className="sm:hidden" /> 더불어 잘 사는 삶으로 이어집니다.
           </p>
         </div>
       </div>
