@@ -55,8 +55,9 @@ export const CONTACT_CONFIG = {
  *  - guide       : 신청 후 안내 문구.
  * ----------------------------------------------------------- */
 export const APPLY_CONFIG = {
-  formUrl: '', // 예: 'https://forms.gle/xxxxxxxx'
-  formEntryId: '', // 예: 'entry.1234567890'
+  formUrl:
+    'https://docs.google.com/forms/d/e/1FAIpQLSdufAh6ohRGfctPVs_ygor6jk90AaDaM1auXEc5KdA_lQDaRg/viewform', // 구글폼 신청서
+  formEntryId: 'entry.944691295', // '수강 희망 강좌' 칸 (강의명 자동 채움)
   kakaoUrl: '', // 예: 'https://open.kakao.com/o/xxxxxxx'
   bankAccount: '', // 예: '농협 123-4567-8901 오현수'
   tossLink: '', // 예: 'https://toss.me/xxxx'
