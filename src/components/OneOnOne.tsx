@@ -20,7 +20,7 @@ export default function OneOnOne() {
     <section id="oneonone" className="scroll-mt-24 bg-paper py-section">
       <div className="wrap">
         <div className="max-w-3xl">
-          <SectionLabel en="1:1 PERSONAL · 나에게 맞춘 수업" />
+          <SectionLabel en="INQUIRY · 강의 문의 (1:1 개인지도 가능)" />
           <h2 className="reveal mt-5 whitespace-pre-line text-fluid-h2 font-extrabold leading-tight text-ink" data-delay="60">
             {ONEONONE_CONFIG.headline}
           </h2>
@@ -141,7 +141,7 @@ export default function OneOnOne() {
             {...applyAttrs}
             className="btn mt-8 bg-beige text-ink hover:bg-base"
           >
-            1:1 개인지도 신청하기
+            강의 문의하기
           </a>
           {APPLY_CONFIG.kakaoUrl && (
             <p className="mt-5">

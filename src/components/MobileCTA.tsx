@@ -23,7 +23,7 @@ export default function MobileCTA() {
           강의 신청하기
         </a>
         <a href="#oneonone-apply" className="btn-outline !min-h-[48px] flex-1 !px-4 !py-3 !text-sm">
-          1:1 신청
+          강의 문의
         </a>
       </div>
     </div>
