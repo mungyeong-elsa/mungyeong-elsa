@@ -58,8 +58,8 @@ export const APPLY_CONFIG = {
   formUrl:
     'https://docs.google.com/forms/d/e/1FAIpQLSdufAh6ohRGfctPVs_ygor6jk90AaDaM1auXEc5KdA_lQDaRg/viewform', // 구글폼 신청서
   formEntryId: 'entry.944691295', // '수강 희망 강좌' 칸 (강의명 자동 채움)
-  kakaoUrl: '', // 예: 'https://open.kakao.com/o/xxxxxxx'
-  bankAccount: '', // 예: '농협 123-4567-8901 오현수'
+  kakaoUrl: 'https://open.kakao.com/me/mgdtelsa', // 카카오톡 오픈채팅
+  bankAccount: '농협 352-1330-3711-13 오현수', // 계좌이체 안내
   tossLink: '', // 예: 'https://toss.me/xxxx'
   guide:
     '신청서를 남겨주시면 문경엘사가 직접 연락드려 일정과 결제 방법(계좌이체 또는 간편 결제 링크)을 안내해드립니다.',

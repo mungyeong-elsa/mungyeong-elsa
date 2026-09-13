@@ -2,11 +2,16 @@ import { useEffect, useState } from 'react'
 import {
   LECTURE_DATA,
   APPLY_CONFIG,
-  CONTACT_CONFIG,
   type Lecture as LectureType,
   type LectureStatus,
 } from '../data/content'
-import { applyHref, applyOpensNewTab } from '../lib/apply'
+import {
+  applyHref,
+  applyOpensNewTab,
+  inquiryHref,
+  inquiryLabel,
+  inquiryOpensNewTab,
+} from '../lib/apply'
 import SectionLabel from './SectionLabel'
 
 const STATUS_STYLE: Record<LectureStatus, string> = {
@@ -147,10 +152,16 @@ function LectureModal({ lecture, onClose }: { lecture: LectureType; onClose: () 
           )}
         </dl>
 
-        {APPLY_CONFIG.guide && (
-          <p className="mt-8 rounded-2xl bg-paper p-5 text-base leading-relaxed text-text/80">
-            {APPLY_CONFIG.guide}
-          </p>
+        {(APPLY_CONFIG.guide || APPLY_CONFIG.bankAccount) && (
+          <div className="mt-8 rounded-2xl bg-paper p-5 text-base leading-relaxed text-text/80">
+            {APPLY_CONFIG.guide && <p>{APPLY_CONFIG.guide}</p>}
+            {APPLY_CONFIG.bankAccount && (
+              <p className="mt-3">
+                <span className="font-semibold text-ink">계좌이체</span>{' '}
+                {APPLY_CONFIG.bankAccount}
+              </p>
+            )}
+          </div>
         )}
 
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -164,13 +175,13 @@ function LectureModal({ lecture, onClose }: { lecture: LectureType; onClose: () 
             이 강의 신청하기
           </a>
           <a
-            href={`mailto:${CONTACT_CONFIG.email}?subject=${encodeURIComponent(
-              `[강의 문의] ${lecture.title} — 문경엘사`,
-            )}`}
+            href={inquiryHref(lecture.title)}
+            target={inquiryOpensNewTab() ? '_blank' : undefined}
+            rel={inquiryOpensNewTab() ? 'noopener noreferrer' : undefined}
             onClick={onClose}
             className="btn-outline w-full sm:w-auto"
           >
-            문의하기
+            {inquiryLabel()}
           </a>
         </div>
       </div>

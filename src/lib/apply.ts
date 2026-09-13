@@ -29,3 +29,24 @@ export function applyHref(courseName?: string): string {
 export function applyOpensNewTab(): boolean {
   return Boolean(APPLY_CONFIG.formUrl || APPLY_CONFIG.kakaoUrl)
 }
+
+/**
+ * 문의(또는 카톡 신청) 링크. 카카오톡이 있으면 카톡으로, 없으면 이메일 문의로.
+ */
+export function inquiryHref(courseName?: string): string {
+  if (APPLY_CONFIG.kakaoUrl) return APPLY_CONFIG.kakaoUrl
+  const subject = courseName
+    ? `[강의 문의] ${courseName} — 문경엘사`
+    : '[문의] 문경엘사'
+  return `mailto:${CONTACT_CONFIG.email}?subject=${encodeURIComponent(subject)}`
+}
+
+/** 문의 버튼에 보여줄 문구 (카톡이면 '카톡으로 문의') */
+export function inquiryLabel(): string {
+  return APPLY_CONFIG.kakaoUrl ? '카톡으로 문의하기' : '문의하기'
+}
+
+/** 문의 링크가 외부(카톡)라 새 탭으로 열어야 하는지 여부 */
+export function inquiryOpensNewTab(): boolean {
+  return Boolean(APPLY_CONFIG.kakaoUrl)
+}

@@ -6,7 +6,8 @@ import {
   ONEONONE_STEPS,
   ONEONONE_REVIEWS,
 } from '../data/content'
-import { applyHref, applyOpensNewTab } from '../lib/apply'
+import { applyHref, applyOpensNewTab, inquiryHref, inquiryOpensNewTab } from '../lib/apply'
+import { APPLY_CONFIG } from '../data/content'
 import SectionLabel from './SectionLabel'
 
 export default function OneOnOne() {
@@ -142,6 +143,18 @@ export default function OneOnOne() {
           >
             1:1 개인지도 신청하기
           </a>
+          {APPLY_CONFIG.kakaoUrl && (
+            <p className="mt-5">
+              <a
+                href={inquiryHref('1:1 개인지도')}
+                target={inquiryOpensNewTab() ? '_blank' : undefined}
+                rel={inquiryOpensNewTab() ? 'noopener noreferrer' : undefined}
+                className="text-base font-semibold text-beige underline underline-offset-4 hover:text-base"
+              >
+                또는 카톡으로 편하게 문의하기
+              </a>
+            </p>
+          )}
         </div>
       </div>
     </section>
