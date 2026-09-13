@@ -75,11 +75,8 @@ function SocialIcon({ name }: { name: string }) {
   if (name === 'YouTube')
     return (
       <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true">
-        <path
-          fill="#FF0000"
-          d="M23 12s0-3.2-.4-4.7c-.2-.8-.9-1.5-1.7-1.7C19.4 5.2 12 5.2 12 5.2s-7.4 0-8.9.4c-.8.2-1.5.9-1.7 1.7C1 8.8 1 12 1 12s0 3.2.4 4.7c.2.8.9 1.5 1.7 1.7 1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4c.8-.2 1.5-.9 1.7-1.7.4-1.5.4-4.7.4-4.7z"
-        />
-        <path fill="#fff" d="M9.7 15.3V8.7l6.2 3.3z" />
+        <rect width="24" height="24" rx="6" fill="#FF0000" />
+        <path fill="#fff" d="M9.8 8.3 16.4 12 9.8 15.7z" />
       </svg>
     )
   // Naver Blog (네이버)
