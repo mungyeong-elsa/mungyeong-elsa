@@ -109,6 +109,14 @@ export default function OneOnOne() {
               <br />
               {ONEONONE_CONFIG.offline}
             </p>
+            {ONEONONE_CONFIG.priceNote && (
+              <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-accent/12 px-4 py-2 text-sm font-bold text-accent">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="shrink-0">
+                  <path d="M12 8v5m0 3h.01M12 21a9 9 0 100-18 9 9 0 000 18z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                {ONEONONE_CONFIG.priceNote}
+              </p>
+            )}
           </div>
         </div>
 

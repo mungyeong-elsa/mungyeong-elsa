@@ -437,6 +437,8 @@ export const ONEONONE_CONFIG = {
   // 온라인/오프라인 안내
   online: '온라인 · Zoom, Google Meet 등 화상으로 진행',
   offline: '오프라인 · 문경 지역에서 직접 만나 진행',
+  // 수업료 안내 (상담 후 결정)
+  priceNote: '수업료는 배우실 내용과 횟수에 따라 상담 후 결정됩니다.',
 }
 
 // 함께 배우는 강의 vs 1:1 비교 (방문자가 자신에게 맞는 쪽을 고르도록)
