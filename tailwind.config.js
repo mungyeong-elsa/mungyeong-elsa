@@ -4,14 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Brand color system — "Warm Editorial + Modern Digital"
-        base: '#F7F5F0', // Background
-        ink: '#17251F', // Main Dark
-        text: '#27302C', // Text
-        muted: '#737A74', // Secondary
-        forest: '#667A63', // Natural Green
-        beige: '#D8CBB8', // Warm Beige
-        accent: '#B87952', // Accent
+        // Brand color system — "Soft Pastel · Purple & Blue / Modern"
+        base: '#F4F4FC', // Background (cool lavender white)
+        ink: '#221D45', // Main Dark (deep indigo)
+        text: '#37344E', // Text (cool slate)
+        muted: '#7E7B95', // Secondary (lavender gray)
+        forest: '#4F6AD0', // Brand Blue (보조)
+        beige: '#CBCDF4', // Light Periwinkle (neutral)
+        accent: '#6E4FD4', // Brand Purple (주 강조)
         paper: '#FFFFFF', // White
       },
       fontFamily: {
