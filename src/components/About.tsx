@@ -1,7 +1,6 @@
 import {
   PROFILE_CONFIG,
   IMAGE_CONFIG,
-  EDUCATION,
   CAREER_DATA,
   CERT_DATA,
 } from '../data/content'
@@ -79,14 +78,9 @@ export default function About() {
             ))}
           </div>
 
-          {/* 학력 · 경력 · 자격증 */}
+          {/* 경력 · 자격증 */}
           <div className="reveal mt-12 border-t border-ink/10 pt-10" data-delay="80">
-            <p className="display text-xs font-semibold uppercase tracking-label text-muted">
-              학력
-            </p>
-            <p className="mt-2 text-base font-semibold text-ink">{EDUCATION}</p>
-
-            <div className="mt-10 grid gap-10 sm:grid-cols-2">
+            <div className="grid gap-10 sm:grid-cols-2">
               {/* 경력 */}
               <div>
                 <h3 className="display text-xs font-semibold uppercase tracking-label text-muted">

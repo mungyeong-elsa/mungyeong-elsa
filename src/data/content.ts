@@ -102,8 +102,6 @@ export const PROFILE_CONFIG = {
  *  CAREER · CERT — 경력 / 자격증 (ABOUT 섹션에 표시)
  *  최신순으로 정렬. 새 항목은 { } 블록을 복사해 맨 위에 추가하세요.
  * ----------------------------------------------------------- */
-export const EDUCATION = '국립경북대학교 중어중문학과 졸업'
-
 export interface Career {
   period: string
   role: string
