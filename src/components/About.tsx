@@ -1,4 +1,10 @@
-import { PROFILE_CONFIG, IMAGE_CONFIG } from '../data/content'
+import {
+  PROFILE_CONFIG,
+  IMAGE_CONFIG,
+  EDUCATION,
+  CAREER_DATA,
+  CERT_DATA,
+} from '../data/content'
 
 export default function About() {
   return (
@@ -71,6 +77,48 @@ export default function About() {
                 {p}
               </p>
             ))}
+          </div>
+
+          {/* 학력 · 경력 · 자격증 */}
+          <div className="reveal mt-12 border-t border-ink/10 pt-10" data-delay="80">
+            <p className="display text-xs font-semibold uppercase tracking-label text-muted">
+              학력
+            </p>
+            <p className="mt-2 text-base font-semibold text-ink">{EDUCATION}</p>
+
+            <div className="mt-10 grid gap-10 sm:grid-cols-2">
+              {/* 경력 */}
+              <div>
+                <h3 className="display text-xs font-semibold uppercase tracking-label text-muted">
+                  주요 경력
+                </h3>
+                <ul className="mt-4 space-y-4">
+                  {CAREER_DATA.map((c) => (
+                    <li key={c.period + c.role} className="flex flex-col gap-0.5">
+                      <span className="display text-sm font-bold text-forest">{c.period}</span>
+                      <span className="text-base leading-snug text-text/90">{c.role}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* 자격증 */}
+              <div>
+                <h3 className="display text-xs font-semibold uppercase tracking-label text-muted">
+                  자격증
+                </h3>
+                <ul className="mt-4 space-y-4">
+                  {CERT_DATA.map((c) => (
+                    <li key={c.name} className="flex flex-col gap-0.5">
+                      <span className="text-base font-bold text-ink">{c.name}</span>
+                      <span className="text-sm text-muted">
+                        {c.org} · {c.year}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>

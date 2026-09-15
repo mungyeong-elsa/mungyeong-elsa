@@ -99,6 +99,42 @@ export const PROFILE_CONFIG = {
 }
 
 /* -------------------------------------------------------------
+ *  CAREER · CERT — 경력 / 자격증 (ABOUT 섹션에 표시)
+ *  최신순으로 정렬. 새 항목은 { } 블록을 복사해 맨 위에 추가하세요.
+ * ----------------------------------------------------------- */
+export const EDUCATION = '국립경북대학교 중어중문학과 졸업'
+
+export interface Career {
+  period: string
+  role: string
+}
+
+export const CAREER_DATA: Career[] = [
+  { period: '2026.03 ~ 현재', role: "문경시문화원 'AI로 작가되기' 강사" },
+  { period: '2024.03 ~ 현재', role: '문경시니어문화센터 스마트폰 고급반 강사' },
+  { period: '2024.03 ~ 현재', role: '주흘문화센터 컴퓨터반 강사' },
+  { period: '2023.03 ~ 현재', role: '가은읍 1인미디어 크리에이터반 강사' },
+  { period: '2026.04', role: '문경시 마을활동가 AI활용교육 강사' },
+  { period: '2025.02', role: '문경시 농업기술센터 AI 농장브랜딩 강좌' },
+  { period: '2021.09 ~ 2023.12', role: '경북디지털배움터(상주·문경) 강사' },
+]
+
+export interface Cert {
+  name: string
+  org: string
+  year: string
+}
+
+export const CERT_DATA: Cert[] = [
+  { name: 'AI전문강사', org: '국제AI브랜딩협회', year: '2026' },
+  { name: 'AI프롬프트활용능력 1급', org: '한국생산성본부', year: '2025' },
+  { name: '디지털튜터 1급', org: '비저너리 글로벌', year: '2022' },
+  { name: '스마트폰지도사 1급', org: '한국소셜마케팅진흥원', year: '2020' },
+  { name: '1인미디어콘텐츠강사', org: '한국소셜미디어전문가협회', year: '2020' },
+  { name: '정보처리산업기사', org: '한국산업인력공단', year: '1999' },
+]
+
+/* -------------------------------------------------------------
  *  WHAT I DO — 하는 일 3가지
  * ----------------------------------------------------------- */
 export const WHATIDO_DATA = [
