@@ -1,7 +1,6 @@
 import {
   ONEONONE_CONFIG,
   ONEONONE_COMPARE,
-  ONEONONE_FIELDS,
   ONEONONE_TARGETS,
   ONEONONE_STEPS,
   ONEONONE_REVIEWS,
@@ -57,21 +56,6 @@ export default function OneOnOne() {
               >
                 {c.cta}
               </a>
-            </div>
-          ))}
-        </div>
-
-        {/* 1:1로 배울 수 있는 분야 */}
-        <h3 className="reveal mt-16 text-2xl font-extrabold text-ink">이런 것들을 1:1로 배울 수 있어요</h3>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {ONEONONE_FIELDS.map((f, i) => (
-            <div
-              key={f.title}
-              className="reveal rounded-2xl border border-ink/12 bg-base p-6"
-              data-delay={`${(i % 4) * 60}`}
-            >
-              <h4 className="text-lg font-extrabold text-ink">{f.title}</h4>
-              <p className="mt-2 text-base leading-relaxed text-muted">{f.desc}</p>
             </div>
           ))}
         </div>

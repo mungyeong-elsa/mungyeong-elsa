@@ -459,23 +459,6 @@ export const ONEONONE_COMPARE = [
   },
 ]
 
-export interface OneOnOneField {
-  title: string
-  desc: string
-}
-
-// 1:1로 배울 수 있는 분야
-export const ONEONONE_FIELDS: OneOnOneField[] = [
-  { title: '스마트폰 1:1', desc: '내 스마트폰을 직접 보면서 필요한 기능을 하나씩 배우는 맞춤 수업' },
-  { title: 'ChatGPT 1:1', desc: '가입부터 질문하기, 글쓰기, 콘텐츠 제작까지' },
-  { title: 'AI 활용 1:1', desc: '내 업무에 AI를 실제로 어떻게 활용할지 함께 실습' },
-  { title: 'SNS 1:1', desc: '인스타그램·블로그·페이스북 등 SNS 활용법' },
-  { title: '유튜브 1:1', desc: '채널 개설부터 영상 제작과 업로드까지' },
-  { title: '캡컷 1:1', desc: '스마트폰으로 영상 편집하기' },
-  { title: '퍼스널브랜딩 1:1', desc: '나의 강점과 경험을 콘텐츠와 브랜드로 만드는 과정' },
-  { title: '나만의 책 만들기 1:1', desc: 'AI로 내 경험과 이야기를 한 권의 책으로' },
-]
-
 // 이런 분께 추천합니다
 export const ONEONONE_TARGETS: string[] = [
   '단체 수업에서는 질문하기 어려웠던 분',
