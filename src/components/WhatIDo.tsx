@@ -23,13 +23,10 @@ export default function WhatIDo() {
               data-delay={`${i * 100}`}
             >
               <div>
-                <div className="flex items-baseline justify-between">
-                  <span className="display text-sm font-bold text-beige">{item.no}</span>
-                  <span className="display text-xs font-semibold uppercase tracking-label text-base/40">
-                    {item.en}
-                  </span>
-                </div>
-                <h3 className="mt-8 text-3xl font-extrabold">{item.title}</h3>
+                <span className="display text-xs font-semibold uppercase tracking-label text-base/40">
+                  {item.en}
+                </span>
+                <h3 className="mt-6 text-3xl font-extrabold">{item.title}</h3>
                 <p className="mt-4 text-base leading-relaxed text-base/70">{item.desc}</p>
               </div>
               <div className="mt-10 h-px w-full bg-gradient-to-r from-beige/50 to-transparent transition-all duration-500 group-hover:from-beige" />
