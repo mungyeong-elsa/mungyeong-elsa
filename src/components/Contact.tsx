@@ -1,9 +1,6 @@
 import { CONTACT_CONFIG, APPLY_CONFIG } from '../data/content'
 
 export default function Contact() {
-  const mail = (subject: string) =>
-    `mailto:${CONTACT_CONFIG.email}?subject=${encodeURIComponent(subject)}`
-
   const channels = [
     { key: 'email', label: 'EMAIL', value: CONTACT_CONFIG.email, href: `mailto:${CONTACT_CONFIG.email}` },
     { key: 'phone', label: 'PHONE', value: CONTACT_CONFIG.phone, href: `tel:${CONTACT_CONFIG.phone.replace(/[^0-9+]/g, '')}` },
@@ -45,8 +42,8 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="reveal mt-12 flex flex-wrap gap-3" data-delay="240">
-          {APPLY_CONFIG.kakaoUrl && (
+        {APPLY_CONFIG.kakaoUrl && (
+          <div className="reveal mt-12 flex flex-wrap gap-3" data-delay="240">
             <a
               href={APPLY_CONFIG.kakaoUrl}
               target="_blank"
@@ -55,20 +52,8 @@ export default function Contact() {
             >
               카톡으로 문의하기
             </a>
-          )}
-          <a
-            href={mail('[강의 문의] 문경엘사 오현수님께')}
-            className="btn border border-base/30 text-base hover:bg-base hover:text-ink"
-          >
-            강의 문의하기
-          </a>
-          <a
-            href={mail('[협업 문의] 문경엘사 오현수님께')}
-            className="btn border border-base/30 text-base hover:bg-base hover:text-ink"
-          >
-            협업 문의하기
-          </a>
-        </div>
+          </div>
+        )}
       </div>
     </section>
   )
