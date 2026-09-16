@@ -5,7 +5,6 @@ const NAV = [
   { label: 'ABOUT', ko: '소개', href: '#about' },
   { label: 'LECTURE', ko: '강의', href: '#lecture' },
   { label: 'INQUIRY', ko: '강의문의(1:1 개인지도 가능)', href: '#oneonone' },
-  { label: 'PORTFOLIO', ko: '포트폴리오', href: '#portfolio' },
   { label: 'BOOKS', ko: '펴낸책', href: '#books' },
   { label: 'MOOA FARM', ko: '무아팜', href: '#farm' },
   { label: 'CONTACT', ko: '문의', href: '#contact' },

@@ -91,6 +91,36 @@ export default function Lecture() {
             </button>
           ))}
         </div>
+
+        {/* 강의 현장 사진 */}
+        <div className="mt-16">
+          <h3 className="reveal display text-sm font-semibold uppercase tracking-label text-muted">
+            강의 현장
+          </h3>
+          <div className="mt-5 grid gap-5 sm:grid-cols-3">
+            {[
+              { src: '/images/lecture.jpg', title: 'AI 디지털 교육' },
+              { src: '/images/creator.jpg', title: '1인 미디어 크리에이터 교육' },
+              { src: '/images/branding.jpg', title: '퍼스널브랜딩 교육' },
+            ].map((p, i) => (
+              <figure
+                key={p.title}
+                className="reveal overflow-hidden rounded-2xl border border-ink/10 bg-paper shadow-sm"
+                data-delay={`${i * 80}`}
+              >
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={p.src}
+                    alt={p.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover object-top transition-transform duration-700 ease-soft hover:scale-105"
+                  />
+                </div>
+                <figcaption className="px-4 py-3 text-sm font-bold text-ink">{p.title}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
       </div>
 
       {active && <LectureModal lecture={active} onClose={() => setActive(null)} />}

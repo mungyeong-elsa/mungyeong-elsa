@@ -6,7 +6,6 @@ import WhatIDo from './components/WhatIDo'
 import Lecture from './components/Lecture'
 import Reviews from './components/Reviews'
 import OneOnOne from './components/OneOnOne'
-import Portfolio from './components/Portfolio'
 import Books from './components/Books'
 import Indigo from './components/Indigo'
 import MuaFarm from './components/MuaFarm'
@@ -35,7 +34,6 @@ export default function App() {
         <Lecture />
         <Reviews />
         <OneOnOne />
-        <Portfolio />
         <Books />
         <Indigo />
         <MuaFarm />
