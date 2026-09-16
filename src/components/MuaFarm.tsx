@@ -22,17 +22,6 @@ export default function MuaFarm() {
               농촌의 자연 속에서 머물며 쉬어갈 수 있는 힐링 공간을 만들어가고 있습니다.
             </p>
           </div>
-
-          <div className="reveal mt-10 flex flex-wrap gap-3" data-delay="220">
-            {['디지털과 자연', '일과 삶', '배움과 쉼'].map((t) => (
-              <span
-                key={t}
-                className="rounded-full border border-forest/30 bg-forest/5 px-5 py-2.5 text-sm font-semibold text-forest"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
         </div>
 
         {/* 이미지 */}
