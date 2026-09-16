@@ -37,13 +37,8 @@ export default function Hero() {
             나누는 디지털 라이프를 만들어갑니다.
           </p>
 
-          <div className="reveal mt-10 flex flex-wrap items-center gap-3" data-delay="240">
-            <HeroDropdown label="강의" variant="primary" items={LECTURE_ITEMS} />
-            <HeroDropdown label="포트폴리오" variant="outline" items={PORTFOLIO_ITEMS} />
-          </div>
-
           {/* 브랜드 문장 */}
-          <div className="reveal mt-12 flex flex-wrap items-center gap-x-3 gap-y-2" data-delay="300">
+          <div className="reveal mt-8 flex flex-wrap items-center gap-x-3 gap-y-2" data-delay="220">
             {['배우고', '만들고', '나누고', '기록합니다'].map((w, i) => (
               <span key={w} className="flex items-center gap-3">
                 <span className="display text-sm font-semibold uppercase tracking-[0.12em] text-ink/70">
@@ -52,6 +47,11 @@ export default function Hero() {
                 {i < 3 && <span className="h-1 w-1 rounded-full bg-accent/60" />}
               </span>
             ))}
+          </div>
+
+          <div className="reveal mt-8 flex flex-wrap items-center gap-3" data-delay="280">
+            <HeroDropdown label="강의" variant="primary" items={LECTURE_ITEMS} />
+            <HeroDropdown label="포트폴리오" variant="outline" items={PORTFOLIO_ITEMS} />
           </div>
         </div>
 

@@ -484,7 +484,7 @@ export const ONEONONE_COMPARE = [
   {
     tag: '나에게 맞춘 1:1 개인지도',
     desc: '내가 궁금한 것만, 내 속도에 맞춰 배우고 싶다면',
-    href: '#oneonone-apply',
+    href: '#contact',
     cta: '강의 문의하기',
     highlight: true,
   },

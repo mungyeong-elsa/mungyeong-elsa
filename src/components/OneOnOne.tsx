@@ -5,15 +5,9 @@ import {
   ONEONONE_STEPS,
   ONEONONE_REVIEWS,
 } from '../data/content'
-import { applyOpensNewTab } from '../lib/apply'
 import SectionLabel from './SectionLabel'
 
 export default function OneOnOne() {
-  const newTab = applyOpensNewTab()
-  const applyAttrs = newTab
-    ? { target: '_blank', rel: 'noopener noreferrer' }
-    : {}
-
   return (
     <section id="oneonone" className="scroll-mt-24 bg-paper py-section">
       <div className="wrap">
@@ -46,7 +40,6 @@ export default function OneOnOne() {
               </p>
               <a
                 href={c.href}
-                {...(c.highlight ? applyAttrs : {})}
                 className={
                   c.highlight
                     ? 'btn mt-6 bg-beige text-ink hover:bg-base'
