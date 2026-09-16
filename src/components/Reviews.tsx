@@ -1,5 +1,4 @@
 import { REVIEW_DATA } from '../data/content'
-import { applyHref, applyOpensNewTab } from '../lib/apply'
 import SectionLabel from './SectionLabel'
 
 function Stars({ n }: { n: number }) {
@@ -28,9 +27,6 @@ function Stars({ n }: { n: number }) {
 }
 
 export default function Reviews() {
-  const newTab = applyOpensNewTab()
-  const applyAttrs = newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {}
-
   return (
     <section id="reviews" className="scroll-mt-24 bg-beige/20 py-section">
       <div className="wrap">
@@ -63,15 +59,6 @@ export default function Reviews() {
               <figcaption className="mt-6 text-base font-bold text-ink">— {r.name}</figcaption>
             </figure>
           ))}
-        </div>
-
-        <div className="reveal mt-12 flex flex-wrap items-center gap-4" data-delay="120">
-          <a href={applyHref()} {...applyAttrs} className="btn-primary">
-            나도 강의 신청하기
-          </a>
-          <a href="#lecture" className="btn-outline">
-            강의 둘러보기
-          </a>
         </div>
       </div>
     </section>
