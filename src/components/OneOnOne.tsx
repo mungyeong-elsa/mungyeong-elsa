@@ -11,7 +11,7 @@ export default function OneOnOne() {
     <section id="oneonone" className="scroll-mt-24 bg-paper py-section">
       <div className="wrap">
         <div className="max-w-3xl">
-          <SectionLabel en="INQUIRY · 강의 문의 (1:1 개인지도 가능)" />
+          <SectionLabel en="INQUIRY · 강의 문의" />
           <h2 className="reveal mt-5 whitespace-pre-line text-fluid-h2 font-extrabold leading-tight text-ink" data-delay="60">
             {ONEONONE_CONFIG.headline}
           </h2>
