@@ -29,19 +29,6 @@ export default function About() {
                 </div>
               )}
             </div>
-
-            {/* 키워드 */}
-            <div className="mt-6 flex flex-wrap gap-2">
-              {PROFILE_CONFIG.aboutKeywords.map((k, i) => (
-                <span
-                  key={k}
-                  className="reveal display rounded-full border border-ink/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-ink/70"
-                  data-delay={`${i * 80}`}
-                >
-                  {k}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
 
