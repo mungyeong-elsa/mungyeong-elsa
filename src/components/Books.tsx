@@ -28,6 +28,9 @@ export default function Books() {
             <br />
             <span className="text-accent">콘텐츠</span>가 됩니다.
           </h2>
+          <p className="reveal mt-5 text-base leading-relaxed text-muted" data-delay="120">
+            사진을 누르면 구매하기로 연결됩니다.
+          </p>
         </div>
 
         <div className="mt-14 grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4">
