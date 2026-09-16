@@ -362,6 +362,27 @@ export const BOOK_DATA: Book[] = [
     cover: '/images/book-smartphone.jpg',
   },
   {
+    title: '스마트폰 씹어먹기 1 (기본편)',
+    label: 'SMARTPHONE · 2025 with AI',
+    desc: '2025 최신판 with AI · 기본편. 스마트폰의 기본기를 처음부터 차근차근 익히는 공저 교재입니다.',
+    spineColor: '#6E4FD4',
+    cover: '/images/book-sseb1.jpg',
+  },
+  {
+    title: '스마트폰 씹어먹기 2 (활용편)',
+    label: 'SMARTPHONE · 2025 with AI',
+    desc: '2025 최신판 with AI · 활용편. 사진·영상·앱까지 스마트폰을 200% 활용하는 공저 교재입니다.',
+    spineColor: '#6E4FD4',
+    cover: '/images/book-sseb2.jpg',
+  },
+  {
+    title: '스마트폰 씹어먹기 3 (생활편)',
+    label: 'SMARTPHONE · 2025 with AI',
+    desc: '2025 최신판 with AI · 생활편. 실생활에서 바로 쓰는 스마트폰 활용을 담은 공저 교재입니다.',
+    spineColor: '#6E4FD4',
+    cover: '/images/book-sseb3.jpg',
+  },
+  {
     title: 'AI는 처음이지',
     label: 'AI · SENIOR',
     desc: '시니어를 위한 AI 디지털 용어 해설서. 낯선 AI 용어를 일상의 언어로 쉽게 풀어냅니다.',
