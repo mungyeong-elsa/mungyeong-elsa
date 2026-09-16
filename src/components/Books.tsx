@@ -114,9 +114,27 @@ function BookModal({ book, onClose }: { book: Book; onClose: () => void }) {
             <p className="mt-4 text-base leading-relaxed text-text/90">{book.desc}</p>
           </div>
         </div>
-        <a href="#indigo" onClick={onClose} className="btn-outline mt-8 w-full sm:w-auto">
-          인디go 알아보기
-        </a>
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          {book.soldOut ? (
+            <span className="btn w-full cursor-not-allowed bg-muted/25 text-muted sm:w-auto">
+              품절
+            </span>
+          ) : (
+            book.buyUrl && (
+              <a
+                href={book.buyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn w-full sm:w-auto"
+              >
+                구매하러 가기
+              </a>
+            )
+          )}
+          <a href="#indigo" onClick={onClose} className="btn-outline w-full sm:w-auto">
+            인디go 알아보기
+          </a>
+        </div>
       </div>
     </div>
   )

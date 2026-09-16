@@ -366,6 +366,8 @@ export interface Book {
   desc: string
   cover?: string
   spineColor: string // 표지 색 (사진 없을 때)
+  buyUrl?: string // 구매 페이지 링크 (있을 때만 '구매하러 가기' 버튼 노출)
+  soldOut?: boolean // 품절 (true면 구매 버튼 대신 '품절' 표시)
 }
 
 export const BOOK_DATA: Book[] = [
@@ -375,6 +377,7 @@ export const BOOK_DATA: Book[] = [
     desc: 'MKYU 디지털독서혁명 · "세상을 바꾸는 사람들의 이야기". 디지털 튜터를 위한 활동 가이드를 담은 공저입니다.',
     spineColor: '#6E4FD4',
     cover: '/images/book-tutor.jpg',
+    buyUrl: 'https://ebook-product.kyobobook.co.kr/dig/epd/ebook/E000005420795',
   },
   {
     title: '2026 스마트폰 씹어먹기 기본편',
@@ -382,6 +385,7 @@ export const BOOK_DATA: Book[] = [
     desc: '스마트폰이 어렵게 느껴지는 사람도 하나씩 따라 하며 익힐 수 있는 활용 교재. 최신 환경에 맞춰 개정판을 이어가고 있습니다.',
     spineColor: '#667A63',
     cover: '/images/book-smartphone.jpg',
+    buyUrl: 'https://product.kyobobook.co.kr/detail/S000220717599',
   },
   {
     title: '스마트폰 씹어먹기 1 (기본편)',
@@ -389,6 +393,7 @@ export const BOOK_DATA: Book[] = [
     desc: '2025 최신판 with AI · 기본편. 스마트폰의 기본기를 처음부터 차근차근 익히는 공저 교재입니다.',
     spineColor: '#6E4FD4',
     cover: '/images/book-sseb1.jpg',
+    soldOut: true,
   },
   {
     title: '스마트폰 씹어먹기 2 (활용편)',
@@ -396,6 +401,7 @@ export const BOOK_DATA: Book[] = [
     desc: '2025 최신판 with AI · 활용편. 사진·영상·앱까지 스마트폰을 200% 활용하는 공저 교재입니다.',
     spineColor: '#6E4FD4',
     cover: '/images/book-sseb2.jpg',
+    soldOut: true,
   },
   {
     title: '스마트폰 씹어먹기 3 (생활편)',
@@ -403,6 +409,7 @@ export const BOOK_DATA: Book[] = [
     desc: '2025 최신판 with AI · 생활편. 실생활에서 바로 쓰는 스마트폰 활용을 담은 공저 교재입니다.',
     spineColor: '#6E4FD4',
     cover: '/images/book-sseb3.jpg',
+    soldOut: true,
   },
   {
     title: 'AI는 처음이지',
@@ -410,6 +417,7 @@ export const BOOK_DATA: Book[] = [
     desc: '시니어를 위한 AI 디지털 용어 해설서. 낯선 AI 용어를 일상의 언어로 쉽게 풀어냅니다.',
     spineColor: '#B87952',
     cover: '/images/book-ai.jpg',
+    buyUrl: 'https://ebook-product.kyobobook.co.kr/dig/epd/ebook/E000012237014',
   },
   {
     title: '웃기지 않아도 괜찮아',
@@ -417,6 +425,7 @@ export const BOOK_DATA: Book[] = [
     desc: 'AI를 활용해 만든 그림동화책. 누구나 자신의 이야기를 그림책으로 만들 수 있다는 것을 보여줍니다.',
     spineColor: '#17251F',
     cover: '/images/book-funny.jpg',
+    buyUrl: 'https://ebook-product.kyobobook.co.kr/dig/epd/ebook/E000011533495',
   },
   {
     title: '할머니의 비밀별',
@@ -424,6 +433,7 @@ export const BOOK_DATA: Book[] = [
     desc: 'AI를 활용해 만든 그림동화책. 따뜻한 이야기와 그림이 함께 담겼습니다.',
     spineColor: '#737A74',
     cover: '/images/book-grandma.jpg',
+    buyUrl: 'https://ebook-product.kyobobook.co.kr/dig/epd/ebook/E000012293071',
   },
   {
     title: '엄마의 꽃밭',
@@ -431,6 +441,7 @@ export const BOOK_DATA: Book[] = [
     desc: 'AI로 그린 그림에 색을 입히는 컬러링북. 꽃밭 속 따뜻한 풍경을 직접 칠하며 쉬어갈 수 있습니다.',
     spineColor: '#B87952',
     cover: '/images/book-mom.jpg',
+    buyUrl: 'https://product.kyobobook.co.kr/detail/S000220492857',
   },
   {
     title: '24절기 색칠하기',
@@ -438,6 +449,7 @@ export const BOOK_DATA: Book[] = [
     desc: '24절기의 자연 풍경과 우리 조상의 지혜를 담은 컬러링북. 계절의 흐름을 색으로 만나 봅니다.',
     spineColor: '#667A63',
     cover: '/images/book-24.jpg',
+    buyUrl: 'https://ebook-product.kyobobook.co.kr/dig/epd/ebook/E000005250865',
   },
 ]
 
