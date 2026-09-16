@@ -1,4 +1,4 @@
-import { CONTACT_CONFIG, SOCIAL_CONFIG, APPLY_CONFIG } from '../data/content'
+import { CONTACT_CONFIG, APPLY_CONFIG } from '../data/content'
 
 export default function Contact() {
   const mail = (subject: string) =>
@@ -8,12 +8,6 @@ export default function Contact() {
     { key: 'email', label: 'EMAIL', value: CONTACT_CONFIG.email, href: `mailto:${CONTACT_CONFIG.email}` },
     { key: 'phone', label: 'PHONE', value: CONTACT_CONFIG.phone, href: `tel:${CONTACT_CONFIG.phone.replace(/[^0-9+]/g, '')}` },
   ]
-
-  const socials = [
-    { label: 'Instagram', url: SOCIAL_CONFIG.instagram },
-    { label: 'YouTube', url: SOCIAL_CONFIG.youtube },
-    { label: 'Blog', url: SOCIAL_CONFIG.blog },
-  ].filter((s) => s.url)
 
   return (
     <section id="contact" className="scroll-mt-24 bg-ink py-section text-base">
@@ -48,22 +42,6 @@ export default function Contact() {
                 <span className="text-lg font-semibold">{c.value}</span>
               </a>
             ))}
-
-            {socials.length > 0 && (
-              <div className="flex flex-wrap gap-3 pt-2">
-                {socials.map((s) => (
-                  <a
-                    key={s.label}
-                    href={s.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-full border border-base/20 px-5 py-2.5 text-sm font-semibold transition-colors hover:border-beige hover:text-beige"
-                  >
-                    {s.label}
-                  </a>
-                ))}
-              </div>
-            )}
           </div>
         </div>
 
