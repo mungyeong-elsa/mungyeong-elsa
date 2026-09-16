@@ -8,19 +8,13 @@ export default function Philosophy() {
             PHILOSOPHY
           </p>
           <blockquote
-            className="reveal mt-10 text-fluid-h2 font-extrabold leading-[1.25] text-ink"
+            className="reveal mt-10 text-fluid-h2 font-extrabold leading-[1.3] text-ink"
             data-delay="80"
           >
-            기술을 배우는 이유는
-            <br />
-            기술을 잘 쓰기 위해서가 아니라,
-            <br />
-            <span className="text-accent">내 삶을 더 잘 살아가기</span> 위해서입니다.
-          </blockquote>
-          <p className="reveal mt-10 text-lg text-muted" data-delay="160">
             배움은 나를 바꾸는 데서 끝나지 않고,
-            <br className="sm:hidden" /> 더불어 잘 사는 삶으로 이어집니다.
-          </p>
+            <br />
+            <span className="text-accent">더불어 잘 사는 삶</span>으로 이어집니다.
+          </blockquote>
         </div>
       </div>
     </section>
