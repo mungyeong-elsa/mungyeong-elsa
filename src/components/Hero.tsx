@@ -38,10 +38,8 @@ export default function Hero() {
           </p>
 
           <div className="reveal mt-10 flex flex-wrap items-center gap-3" data-delay="240">
-            <LectureMenu />
-            <a href="#portfolio" className="btn-outline">
-              포트폴리오 보기
-            </a>
+            <HeroDropdown label="강의" variant="primary" items={LECTURE_ITEMS} />
+            <HeroDropdown label="포트폴리오" variant="outline" items={PORTFOLIO_ITEMS} />
           </div>
 
           {/* 브랜드 문장 */}
@@ -66,10 +64,31 @@ export default function Hero() {
   )
 }
 
-function LectureMenu() {
+type DropItem = { label: string; href: string; external?: boolean; accent?: boolean }
+
+const LECTURE_ITEMS: DropItem[] = [
+  { label: '강의 알아보기', href: '#lecture' },
+  { label: '강의후기', href: '#reviews' },
+  { label: '강의 신청하기', href: applyHref(), external: applyOpensNewTab(), accent: true },
+]
+
+const PORTFOLIO_ITEMS: DropItem[] = [
+  { label: '책소개', href: '#books' },
+  { label: '인디go', href: '#indigo' },
+  { label: '무아팜', href: '#farm' },
+]
+
+function HeroDropdown({
+  label,
+  variant,
+  items,
+}: {
+  label: string
+  variant: 'primary' | 'outline'
+  items: DropItem[]
+}) {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
-  const newTab = applyOpensNewTab()
 
   useEffect(() => {
     if (!open) return
@@ -85,12 +104,6 @@ function LectureMenu() {
     }
   }, [open])
 
-  const items = [
-    { label: '강의 알아보기', href: '#lecture', external: false, accent: false },
-    { label: '강의후기', href: '#reviews', external: false, accent: false },
-    { label: '강의 신청하기', href: applyHref(), external: newTab, accent: true },
-  ]
-
   return (
     <div ref={ref} className="relative">
       <button
@@ -98,9 +111,9 @@ function LectureMenu() {
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="true"
         aria-expanded={open}
-        className="btn-primary"
+        className={variant === 'primary' ? 'btn-primary' : 'btn-outline'}
       >
-        강의
+        {label}
         <svg
           width="18"
           height="18"

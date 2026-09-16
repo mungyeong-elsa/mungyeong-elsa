@@ -14,6 +14,7 @@ import Philosophy from './components/Philosophy'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import MobileCTA from './components/MobileCTA'
+import ScrollTop from './components/ScrollTop'
 
 export default function App() {
   useReveal()
@@ -43,6 +44,7 @@ export default function App() {
       </main>
       <Footer />
       <MobileCTA />
+      <ScrollTop />
     </div>
   )
 }
