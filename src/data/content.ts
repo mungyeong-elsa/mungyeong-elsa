@@ -449,7 +449,7 @@ export const BOOK_DATA: Book[] = [
     desc: '24절기의 자연 풍경과 우리 조상의 지혜를 담은 컬러링북. 계절의 흐름을 색으로 만나 봅니다.',
     spineColor: '#667A63',
     cover: '/images/book-24.jpg',
-    buyUrl: 'https://ebook-product.kyobobook.co.kr/dig/epd/ebook/E000005250865',
+    buyUrl: 'https://product.kyobobook.co.kr/detail/S000221230731',
   },
 ]
 
