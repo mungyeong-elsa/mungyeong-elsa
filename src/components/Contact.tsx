@@ -1,4 +1,4 @@
-import { CONTACT_CONFIG, SOCIAL_CONFIG } from '../data/content'
+import { CONTACT_CONFIG, SOCIAL_CONFIG, APPLY_CONFIG } from '../data/content'
 
 export default function Contact() {
   const mail = (subject: string) =>
@@ -68,7 +68,20 @@ export default function Contact() {
         </div>
 
         <div className="reveal mt-12 flex flex-wrap gap-3" data-delay="240">
-          <a href={mail('[강의 문의] 문경엘사 오현수님께')} className="btn bg-beige text-ink hover:bg-base">
+          {APPLY_CONFIG.kakaoUrl && (
+            <a
+              href={APPLY_CONFIG.kakaoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn bg-beige text-ink hover:bg-base"
+            >
+              카톡으로 문의하기
+            </a>
+          )}
+          <a
+            href={mail('[강의 문의] 문경엘사 오현수님께')}
+            className="btn border border-base/30 text-base hover:bg-base hover:text-ink"
+          >
             강의 문의하기
           </a>
           <a
