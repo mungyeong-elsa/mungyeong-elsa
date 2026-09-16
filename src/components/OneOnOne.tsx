@@ -3,7 +3,6 @@ import {
   ONEONONE_COMPARE,
   ONEONONE_TARGETS,
   ONEONONE_STEPS,
-  ONEONONE_REVIEWS,
 } from '../data/content'
 import SectionLabel from './SectionLabel'
 
@@ -95,23 +94,6 @@ export default function OneOnOne() {
             )}
           </div>
         </div>
-
-        {/* 후기 */}
-        {ONEONONE_REVIEWS.length > 0 && (
-          <div className="mt-16 grid gap-4 md:grid-cols-3">
-            {ONEONONE_REVIEWS.map((r, i) => (
-              <blockquote
-                key={i}
-                className="reveal rounded-2xl border border-ink/10 bg-base p-6 text-base leading-relaxed text-text/90"
-                data-delay={`${(i % 3) * 60}`}
-              >
-                <span className="text-3xl font-extrabold leading-none text-accent">“</span>
-                <p className="mt-2">{r}</p>
-              </blockquote>
-            ))}
-          </div>
-        )}
-
       </div>
     </section>
   )
