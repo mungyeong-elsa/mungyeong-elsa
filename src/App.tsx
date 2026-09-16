@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import WhatIDo from './components/WhatIDo'
 import Lecture from './components/Lecture'
+import Reviews from './components/Reviews'
 import OneOnOne from './components/OneOnOne'
 import Portfolio from './components/Portfolio'
 import Books from './components/Books'
@@ -31,6 +32,7 @@ export default function App() {
         <About />
         <WhatIDo />
         <Lecture />
+        <Reviews />
         <OneOnOne />
         <Portfolio />
         <Books />

@@ -1,4 +1,6 @@
+import { useEffect, useRef, useState } from 'react'
 import { SITE_CONFIG, IMAGE_CONFIG } from '../data/content'
+import { applyHref, applyOpensNewTab } from '../lib/apply'
 
 export default function Hero() {
   return (
@@ -11,7 +13,7 @@ export default function Hero() {
 
       <div className="wrap grid items-center gap-12 pb-section lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
         {/* 좌측 텍스트 */}
-        <div>
+        <div className="relative z-20">
           <p className="eyebrow reveal">
             <span className="inline-block h-px w-8 bg-accent" />
             {SITE_CONFIG.roleEn} · {SITE_CONFIG.locationEn}
@@ -35,10 +37,8 @@ export default function Hero() {
             나누는 디지털 라이프를 만들어갑니다.
           </p>
 
-          <div className="reveal mt-10 flex flex-wrap gap-3" data-delay="240">
-            <a href="#lecture" className="btn-primary">
-              강의 알아보기
-            </a>
+          <div className="reveal mt-10 flex flex-wrap items-center gap-3" data-delay="240">
+            <LectureMenu />
             <a href="#portfolio" className="btn-outline">
               포트폴리오 보기
             </a>
@@ -63,6 +63,81 @@ export default function Hero() {
         </div>
       </div>
     </section>
+  )
+}
+
+function LectureMenu() {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+  const newTab = applyOpensNewTab()
+
+  useEffect(() => {
+    if (!open) return
+    const onDown = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
+    }
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false)
+    document.addEventListener('mousedown', onDown)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('mousedown', onDown)
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [open])
+
+  const items = [
+    { label: '강의 알아보기', href: '#lecture', external: false, accent: false },
+    { label: '강의후기', href: '#reviews', external: false, accent: false },
+    { label: '강의 신청하기', href: applyHref(), external: newTab, accent: true },
+  ]
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-haspopup="true"
+        aria-expanded={open}
+        className="btn-primary"
+      >
+        강의
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          className={`transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
+          aria-hidden="true"
+        >
+          <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+
+      {open && (
+        <div
+          className="absolute left-0 top-full z-40 mt-3 w-64 overflow-hidden rounded-2xl border border-ink/10 bg-paper p-2 shadow-2xl shadow-ink/15 animate-fade-up"
+          role="menu"
+        >
+          {items.map((it) => (
+            <a
+              key={it.label}
+              href={it.href}
+              role="menuitem"
+              onClick={() => setOpen(false)}
+              {...(it.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              className={`flex items-center justify-between rounded-xl px-5 py-4 text-lg font-bold transition-colors ${
+                it.accent ? 'text-accent hover:bg-accent/10' : 'text-ink hover:bg-base'
+              }`}
+            >
+              {it.label}
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="shrink-0 opacity-40" aria-hidden="true">
+                <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
   )
 }
 
