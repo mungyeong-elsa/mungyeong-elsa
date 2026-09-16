@@ -355,6 +355,13 @@ export interface Book {
 
 export const BOOK_DATA: Book[] = [
   {
+    title: '나는 디지털 튜터입니다',
+    label: 'DIGITAL TUTOR · 공저',
+    desc: 'MKYU 디지털독서혁명 · "세상을 바꾸는 사람들의 이야기". 디지털 튜터를 위한 활동 가이드를 담은 공저입니다.',
+    spineColor: '#6E4FD4',
+    cover: '/images/book-tutor.jpg',
+  },
+  {
     title: '2026 스마트폰 씹어먹기 기본편',
     label: 'SMARTPHONE · 공저',
     desc: '스마트폰이 어렵게 느껴지는 사람도 하나씩 따라 하며 익힐 수 있는 활용 교재. 최신 환경에 맞춰 개정판을 이어가고 있습니다.',
