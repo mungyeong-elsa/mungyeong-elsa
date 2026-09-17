@@ -52,9 +52,9 @@ export default function Indigo() {
             <p className="mt-4 text-2xl font-bold leading-snug">
               누구나
               <br />
-              <span className="text-beige">한 권의 저자</span>가
+              <span className="text-beige">자신의 이야기를</span>
               <br />
-              되는 곳.
+              책으로.
             </p>
             <p className="mt-6 text-sm text-base/60">
               문의: {CONTACT_CONFIG.email}
