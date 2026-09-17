@@ -35,41 +35,21 @@ export default function Books() {
 
         <div className="mt-14 grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4">
           {BOOK_DATA.map((book, i) => (
-            <div key={book.title} className="reveal group flex flex-col" data-delay={`${i * 80}`}>
-              <button
-                type="button"
-                onClick={() => setActive(book)}
-                className="text-left"
-              >
-                <BookCover book={book} />
-                <p className="display mt-4 text-[11px] font-semibold uppercase tracking-label text-muted">
-                  {book.label}
-                </p>
-                <h3 className="mt-1 text-lg font-bold text-ink transition-colors group-hover:text-accent">
-                  {book.title}
-                </h3>
-              </button>
-
-              {book.soldOut ? (
-                <span className="mt-3 inline-flex w-fit items-center rounded-full bg-muted/15 px-3.5 py-1.5 text-sm font-semibold text-muted">
-                  품절
-                </span>
-              ) : (
-                book.buyUrl && (
-                  <a
-                    href={book.buyUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-3 inline-flex w-fit items-center gap-1 rounded-full bg-accent px-4 py-1.5 text-sm font-bold text-base transition-colors hover:bg-ink"
-                  >
-                    구매하러 가기
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="shrink-0">
-                      <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </a>
-                )
-              )}
-            </div>
+            <button
+              key={book.title}
+              type="button"
+              onClick={() => setActive(book)}
+              className="reveal group text-left"
+              data-delay={`${i * 80}`}
+            >
+              <BookCover book={book} />
+              <p className="display mt-4 text-[11px] font-semibold uppercase tracking-label text-muted">
+                {book.label}
+              </p>
+              <h3 className="mt-1 text-lg font-bold text-ink transition-colors group-hover:text-accent">
+                {book.title}
+              </h3>
+            </button>
           ))}
         </div>
       </div>
@@ -128,6 +108,25 @@ function BookModal({ book, onClose }: { book: Book; onClose: () => void }) {
         <div className="flex gap-6">
           <div className="w-28 shrink-0">
             <BookCover book={book} />
+            {book.soldOut ? (
+              <span className="mt-3 flex w-full cursor-not-allowed items-center justify-center rounded-full bg-muted/25 px-3 py-2 text-sm font-bold text-muted">
+                품절
+              </span>
+            ) : (
+              book.buyUrl && (
+                <a
+                  href={book.buyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 flex w-full items-center justify-center gap-1 rounded-full bg-accent px-3 py-2 text-sm font-bold text-base transition-colors hover:bg-ink"
+                >
+                  구매하기
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" className="shrink-0">
+                    <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+              )
+            )}
           </div>
           <div>
             <p className="display text-[11px] font-semibold uppercase tracking-label text-accent">
@@ -137,26 +136,6 @@ function BookModal({ book, onClose }: { book: Book; onClose: () => void }) {
             <p className="mt-4 text-base leading-relaxed text-text/90">{book.desc}</p>
           </div>
         </div>
-        {book.soldOut ? (
-          <div className="mt-8">
-            <span className="btn w-full cursor-not-allowed bg-muted/25 text-muted sm:w-auto">
-              품절
-            </span>
-          </div>
-        ) : (
-          book.buyUrl && (
-            <div className="mt-8">
-              <a
-                href={book.buyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn w-full sm:w-auto"
-              >
-                구매하러 가기
-              </a>
-            </div>
-          )
-        )}
       </div>
     </div>
   )
