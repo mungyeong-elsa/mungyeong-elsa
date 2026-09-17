@@ -11,7 +11,6 @@
  *  - IMAGE_CONFIG     : 이미지 경로 (사진 교체용)
  *  - WHATIDO_DATA     : "하는 일" 3가지
  *  - LECTURE_DATA     : 강의 목록
- *  - PORTFOLIO_DATA   : 포트폴리오(작업물) 목록
  *  - BOOK_DATA        : 책 목록
  * ============================================================= */
 
@@ -91,7 +90,6 @@ export const PROFILE_CONFIG = {
     '스마트폰부터 AI, 콘텐츠, 나만의 책까지. 디지털이 어려운 시니어와 농업인에게 가장 쉽게 알려드리는 문경의 AI 디지털 강사입니다.',
     '디지털과 삶은 따로 있지 않습니다. 배운 것을 삶과 일, 나만의 브랜드로 연결합니다.',
   ],
-  aboutKeywords: ['AI', 'PEOPLE', 'BOOK', 'LIFE'],
 }
 
 /* -------------------------------------------------------------
@@ -266,97 +264,6 @@ export const LECTURE_DATA: Lecture[] = [
 ]
 
 /* -------------------------------------------------------------
- *  PORTFOLIO — 작업물 목록
- *  category 는 아래 중 하나 이상: AI, SMARTPHONE, CREATOR, BRANDING, BOOK, FARM
- *  size: 'large' | 'wide' | 'normal'  (카드 크기 — 편집 레이아웃)
- * ----------------------------------------------------------- */
-export interface Portfolio {
-  no: string
-  title: string
-  category: string[]
-  categoryLabel: string
-  desc: string
-  size: 'large' | 'wide' | 'normal'
-  image?: string
-}
-
-export const PORTFOLIO_DATA: Portfolio[] = [
-  {
-    no: '01',
-    title: '스마트폰 씹어먹기',
-    category: ['SMARTPHONE', 'BOOK'],
-    categoryLabel: '스마트폰 활용 교재',
-    desc: '스마트폰 활용 교육 교재. 2024년부터 출간하고 있으며, 최신 스마트폰 환경에 맞춰 개정판을 계속 제작하고 있습니다.',
-    size: 'large',
-    image: '/images/book-smartphone.jpg',
-  },
-  {
-    no: '02',
-    title: 'AI는 처음이지',
-    category: ['AI', 'BOOK'],
-    categoryLabel: '시니어 AI 용어 해설',
-    desc: '시니어를 위한 AI 디지털 용어 해설. 어려운 말을 쉽게 풀어 처음 배우는 사람도 이해할 수 있게 했습니다.',
-    size: 'normal',
-    image: '/images/book-ai.jpg',
-  },
-  {
-    no: '03',
-    title: '웃기지 않아도 괜찮아',
-    category: ['AI', 'BOOK', 'CREATOR'],
-    categoryLabel: 'AI 그림동화책',
-    desc: 'AI를 활용해 제작한 그림동화책.',
-    size: 'normal',
-    image: '/images/book-funny.jpg',
-  },
-  {
-    no: '04',
-    title: '할머니의 비밀별',
-    category: ['AI', 'BOOK', 'CREATOR'],
-    categoryLabel: 'AI 그림동화책',
-    desc: 'AI를 활용해 제작한 그림동화책.',
-    size: 'wide',
-    image: '/images/book-grandma.jpg',
-  },
-  {
-    no: '05',
-    title: 'AI 디지털 교육',
-    category: ['AI', 'FARM'],
-    categoryLabel: '교육 프로그램',
-    desc: '시니어와 농업인을 위한 AI·디지털 교육 프로그램. 문경 지역 기관에서 진행한 실제 강의 현장입니다.',
-    size: 'normal',
-    image: '/images/lecture.jpg',
-  },
-  {
-    no: '06',
-    title: '1인 미디어 크리에이터 교육',
-    category: ['CREATOR', 'SMARTPHONE'],
-    categoryLabel: '콘텐츠 제작 교육',
-    desc: '스마트폰을 활용한 사진·영상·SNS 콘텐츠 제작 교육. 문경시 마을홍보 영상제작 강의 현장입니다.',
-    size: 'wide',
-    image: '/images/creator.jpg',
-  },
-  {
-    no: '07',
-    title: '퍼스널브랜딩 교육',
-    category: ['BRANDING', 'AI'],
-    categoryLabel: '브랜딩 교육',
-    desc: 'AI와 SNS를 활용한 개인 브랜드 구축 교육. 농장 브랜딩과 농산물 마케팅(ChatGPT·캔바·캡컷) 강의 현장입니다.',
-    size: 'normal',
-    image: '/images/branding.jpg',
-  },
-]
-
-export const PORTFOLIO_FILTERS = [
-  'ALL',
-  'AI',
-  'SMARTPHONE',
-  'CREATOR',
-  'BRANDING',
-  'BOOK',
-  'FARM',
-] as const
-
-/* -------------------------------------------------------------
  *  BOOKS — 책 목록
  * ----------------------------------------------------------- */
 export interface Book {
@@ -503,13 +410,6 @@ export const ONEONONE_STEPS: string[] = [
   '수업 일정 확정',
   '결제',
   '수업 시작',
-]
-
-// 대표 후기 (실제 후기가 생기면 여기서 수정·추가)
-export const ONEONONE_REVIEWS: string[] = [
-  '단체 수업에서는 질문하기 어려웠는데, 제 스마트폰을 직접 보면서 알려주시니 훨씬 이해하기 쉬웠어요.',
-  'ChatGPT를 처음에는 무서워했는데, 이제는 매일 사용하고 있어요.',
-  '제가 하고 싶은 일을 이야기했더니 필요한 AI 활용법을 딱 맞춰 알려주셔서 좋았습니다.',
 ]
 
 /* -------------------------------------------------------------

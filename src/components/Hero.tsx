@@ -73,6 +73,7 @@ const LECTURE_ITEMS: DropItem[] = [
 ]
 
 const PORTFOLIO_ITEMS: DropItem[] = [
+  { label: '강사소개', href: '#about' },
   { label: '책소개', href: '#books' },
   { label: '인디go', href: '#indigo' },
   { label: '무아팜', href: '#farm' },
