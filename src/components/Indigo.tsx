@@ -24,7 +24,9 @@ export default function Indigo() {
         >
           당신의 이야기도
           <br />
-          <span className="text-beige">한 권의 책</span>이 될 수 있습니다.
+          <span className="text-beige">한 권의 책</span>이
+          <br />
+          될 수 있습니다.
         </h2>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
