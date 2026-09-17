@@ -6,7 +6,7 @@
  *
  *  - SITE_CONFIG      : 사이트 기본 정보 / 브랜드 문구
  *  - PROFILE_CONFIG   : 소개(ABOUT) 글
- *  - CONTACT_CONFIG   : 이메일 / 전화번호
+ *  - CONTACT_CONFIG   : 이메일
  *  - SOCIAL_CONFIG    : SNS 링크
  *  - IMAGE_CONFIG     : 이미지 경로 (사진 교체용)
  *  - WHATIDO_DATA     : "하는 일" 3가지
@@ -36,7 +36,6 @@ export const SITE_CONFIG = {
 export const CONTACT_CONFIG = {
   // ▼▼▼ 여기를 실제 정보로 바꾸세요 ▼▼▼
   email: 'm31aswater@gmail.com',
-  phone: '010-6769-5539',
   // ▲▲▲ 여기를 실제 정보로 바꾸세요 ▲▲▲
 }
 

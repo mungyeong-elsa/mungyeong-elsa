@@ -2,7 +2,10 @@ import { CONTACT_CONFIG, APPLY_CONFIG } from '../data/content'
 
 export default function Contact() {
   const channels = [
-    { key: 'email', label: 'EMAIL', value: CONTACT_CONFIG.email, href: `mailto:${CONTACT_CONFIG.email}` },
+    { key: 'email', label: 'EMAIL', value: CONTACT_CONFIG.email, href: `mailto:${CONTACT_CONFIG.email}`, external: false },
+    ...(APPLY_CONFIG.kakaoUrl
+      ? [{ key: 'kakao', label: 'KAKAO', value: '오픈채팅 바로가기', href: APPLY_CONFIG.kakaoUrl, external: true }]
+      : []),
   ]
 
   return (
@@ -30,6 +33,8 @@ export default function Contact() {
               <a
                 key={c.key}
                 href={c.href}
+                target={c.external ? '_blank' : undefined}
+                rel={c.external ? 'noopener noreferrer' : undefined}
                 className="flex items-baseline justify-between border-b border-base/15 pb-4 transition-colors hover:border-beige"
               >
                 <span className="display text-xs font-semibold uppercase tracking-label text-base/50">
