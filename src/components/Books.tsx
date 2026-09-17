@@ -35,21 +35,41 @@ export default function Books() {
 
         <div className="mt-14 grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4">
           {BOOK_DATA.map((book, i) => (
-            <button
-              key={book.title}
-              type="button"
-              onClick={() => setActive(book)}
-              className="reveal group text-left"
-              data-delay={`${i * 80}`}
-            >
-              <BookCover book={book} />
-              <p className="display mt-4 text-[11px] font-semibold uppercase tracking-label text-muted">
-                {book.label}
-              </p>
-              <h3 className="mt-1 text-lg font-bold text-ink transition-colors group-hover:text-accent">
-                {book.title}
-              </h3>
-            </button>
+            <div key={book.title} className="reveal group flex flex-col" data-delay={`${i * 80}`}>
+              <button
+                type="button"
+                onClick={() => setActive(book)}
+                className="text-left"
+              >
+                <BookCover book={book} />
+                <p className="display mt-4 text-[11px] font-semibold uppercase tracking-label text-muted">
+                  {book.label}
+                </p>
+                <h3 className="mt-1 text-lg font-bold text-ink transition-colors group-hover:text-accent">
+                  {book.title}
+                </h3>
+              </button>
+
+              {book.soldOut ? (
+                <span className="mt-3 inline-flex w-fit items-center rounded-full bg-muted/15 px-3.5 py-1.5 text-sm font-semibold text-muted">
+                  품절
+                </span>
+              ) : (
+                book.buyUrl && (
+                  <a
+                    href={book.buyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex w-fit items-center gap-1 rounded-full bg-accent px-4 py-1.5 text-sm font-bold text-base transition-colors hover:bg-ink"
+                  >
+                    구매하러 가기
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="shrink-0">
+                      <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </a>
+                )
+              )}
+            </div>
           ))}
         </div>
       </div>
