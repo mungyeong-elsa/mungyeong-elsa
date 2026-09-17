@@ -85,14 +85,14 @@ function BookCover({ book }: { book: Book }) {
 function BookModal({ book, onClose }: { book: Book; onClose: () => void }) {
   return (
     <div
-      className="fixed inset-0 z-[60] flex items-end justify-center bg-ink/60 backdrop-blur-sm sm:items-center sm:p-6 animate-fade-in"
+      className="fixed inset-x-0 top-0 z-[60] flex h-[100dvh] items-end justify-center bg-ink/60 backdrop-blur-sm sm:items-center sm:p-6 animate-fade-in"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={`${book.title} 소개`}
     >
       <div
-        className="relative w-full max-w-lg rounded-t-3xl bg-base p-8 shadow-2xl sm:rounded-3xl sm:p-10 animate-scale-in"
+        className="relative max-h-[90dvh] w-full max-w-lg overflow-y-auto rounded-t-3xl bg-base p-8 pb-[calc(2rem+env(safe-area-inset-bottom))] shadow-2xl sm:max-h-[85dvh] sm:rounded-3xl sm:p-10 animate-scale-in"
         onClick={(e) => e.stopPropagation()}
       >
         <button
