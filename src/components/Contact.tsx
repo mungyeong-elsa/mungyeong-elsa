@@ -3,7 +3,6 @@ import { CONTACT_CONFIG, APPLY_CONFIG } from '../data/content'
 export default function Contact() {
   const channels = [
     { key: 'email', label: 'EMAIL', value: CONTACT_CONFIG.email, href: `mailto:${CONTACT_CONFIG.email}` },
-    { key: 'phone', label: 'PHONE', value: CONTACT_CONFIG.phone, href: `tel:${CONTACT_CONFIG.phone.replace(/[^0-9+]/g, '')}` },
   ]
 
   return (
