@@ -37,11 +37,6 @@ export default function Indigo() {
             <p className="font-semibold text-base">
               인디go는 사람들의 경험과 이야기를 책이라는 형태로 세상에 남기는 일을 합니다.
             </p>
-            <div className="pt-4">
-              <a href="#contact" className="btn bg-beige text-ink hover:bg-base">
-                인디go 알아보기
-              </a>
-            </div>
           </div>
 
           {/* 문구 카드 */}
