@@ -44,7 +44,7 @@ export default function Books() {
             >
               <BookCover book={book} />
               <p className="display mt-4 text-[11px] font-semibold uppercase tracking-label text-muted">
-                {book.label}
+                <BookLabel label={book.label} />
               </p>
               <h3 className="mt-1 text-lg font-bold text-ink transition-colors group-hover:text-accent">
                 {book.title}
@@ -57,6 +57,21 @@ export default function Books() {
       {active && <BookModal book={active} onClose={() => setActive(null)} />}
     </section>
   )
+}
+
+function BookLabel({ label }: { label: string }) {
+  const marker = '공저'
+  if (label.includes(marker)) {
+    const prefix = label.replace(/[·・\s]*공저\s*$/, '').trim()
+    return (
+      <>
+        {prefix}
+        <br />
+        {marker}
+      </>
+    )
+  }
+  return <>{label}</>
 }
 
 function BookCover({ book }: { book: Book }) {
