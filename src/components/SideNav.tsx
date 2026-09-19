@@ -50,15 +50,15 @@ export default function SideNav() {
             <span
               className={`block rounded-full transition-all duration-300 ease-soft ${
                 isActive
-                  ? 'h-3 w-3 bg-accent shadow-[0_0_0_4px_rgba(110,79,212,0.18)]'
-                  : 'h-2.5 w-2.5 bg-ink/25 group-hover:bg-ink/50'
+                  ? 'h-3 w-3 bg-[#B8A6EC] shadow-[0_0_0_4px_rgba(184,166,236,0.30)]'
+                  : 'h-2.5 w-2.5 bg-[#B8A6EC]/35 group-hover:bg-[#B8A6EC]/70'
               }`}
             />
             <span
               className={`display whitespace-nowrap text-xs font-bold tracking-wide transition-all duration-300 ${
                 isActive
-                  ? 'text-accent opacity-100'
-                  : 'text-ink/60 opacity-0 -translate-x-1 group-hover:translate-x-0 group-hover:opacity-100'
+                  ? 'text-[#9784DE] opacity-100'
+                  : 'text-[#9784DE]/70 opacity-0 -translate-x-1 group-hover:translate-x-0 group-hover:opacity-100'
               }`}
             >
               {label}
