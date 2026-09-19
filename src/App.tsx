@@ -14,6 +14,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import MobileCTA from './components/MobileCTA'
 import ScrollTop from './components/ScrollTop'
+import SideNav from './components/SideNav'
 
 export default function App() {
   useReveal()
@@ -27,6 +28,7 @@ export default function App() {
         본문 바로가기
       </a>
       <Header />
+      <SideNav />
       <main id="main">
         <Hero />
         <About />
