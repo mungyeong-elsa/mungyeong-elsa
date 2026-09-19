@@ -30,7 +30,7 @@ export default function About() {
               )}
             </div>
             <p className="reveal mt-3 text-center text-sm text-muted" data-delay="80">
-              큐리어스에서 진행한 강의들
+              온라인 교육 플랫폼 큐리어스에서 진행한 강의
             </p>
           </div>
         </div>
