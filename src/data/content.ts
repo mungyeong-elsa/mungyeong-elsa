@@ -78,6 +78,7 @@ export const SOCIAL_CONFIG = {
  * ----------------------------------------------------------- */
 export const IMAGE_CONFIG = {
   profileImage: '/images/profile.jpg', // (ABOUT 세로 사진) 일러스트 초상
+  aboutGif: '/images/curious.gif', // (ABOUT 이미지) 큐리어스 강의 썸네일 슬라이드 GIF
   heroImage: '/images/hero.jpg', // (첫 화면 메인 비주얼) 자연 속 실물 프로필
   farmImage: '/images/farm.jpg', // (무아팜 사진) 문경 포도밭
   indigoImage: '', // 예: '/images/indigo.jpg'  (인디go 사진)

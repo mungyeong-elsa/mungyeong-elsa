@@ -9,14 +9,14 @@ export default function About() {
   return (
     <section id="about" className="scroll-mt-24 border-t border-ink/10 py-section">
       <div className="wrap grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
-        {/* 좌측 이미지 + 키워드 */}
+        {/* 좌측 이미지 (큐리어스 강의 GIF) */}
         <div className="order-2 lg:order-1">
           <div className="relative">
-            <div className="reveal relative aspect-[3/4] overflow-hidden rounded-[1.75rem] border border-ink/10 bg-gradient-to-b from-beige/60 to-forest/25">
-              {IMAGE_CONFIG.profileImage ? (
+            <div className="reveal relative aspect-square overflow-hidden rounded-[1.75rem] border border-ink/10 bg-gradient-to-b from-beige/60 to-forest/25">
+              {IMAGE_CONFIG.aboutGif ? (
                 <img
-                  src={IMAGE_CONFIG.profileImage}
-                  alt="문경엘사 오현수 프로필"
+                  src={IMAGE_CONFIG.aboutGif}
+                  alt="문경엘사 오현수 - 큐리어스 강의"
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
@@ -29,6 +29,9 @@ export default function About() {
                 </div>
               )}
             </div>
+            <p className="reveal mt-3 text-center text-sm text-muted" data-delay="80">
+              큐리어스에서 진행한 강의들
+            </p>
           </div>
         </div>
 
